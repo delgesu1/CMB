@@ -381,6 +381,237 @@
         }
 
         /* ═══════════════════════════════════════════════════════════
+           EXPERIENCE CAROUSEL
+           ═══════════════════════════════════════════════════════════ */
+
+        .experience-carousel-section {
+            position: relative;
+        }
+
+        /* Fade edges */
+        .experience-carousel-section::before,
+        .experience-carousel-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 80px;
+            width: 40px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .experience-carousel-section::before {
+            left: 0;
+            background: linear-gradient(to right, #f8f8f8, transparent);
+        }
+
+        .experience-carousel-section::after {
+            right: 0;
+            background: linear-gradient(to left, #f8f8f8, transparent);
+        }
+
+        .experience-carousel {
+            display: flex;
+            gap: 24px;
+            padding: 24px 32px 32px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .experience-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .experience-card {
+            position: relative;
+            flex: 0 0 320px;
+            scroll-snap-align: center;
+            background: white;
+            padding: 40px 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 0 1px rgba(166, 93, 79, 0.1);
+        }
+
+        .experience-card.active {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.08), 0 0 0 1px rgba(166, 93, 79, 0.1);
+        }
+
+        .experience-number {
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(--gold-primary);
+            opacity: 0.15;
+            line-height: 1;
+        }
+
+        /* Arrow connectors between cards */
+        .experience-card::after {
+            content: '→';
+            position: absolute;
+            right: -16px;
+            top: 50%;
+            transform: translate(50%, -50%);
+            font-size: 1.25rem;
+            color: var(--gold-primary);
+            opacity: 0.25;
+            line-height: 1;
+        }
+
+        .experience-card:last-child::after {
+            display: none;
+        }
+
+        /* Navigation buttons */
+        .experience-nav {
+            position: absolute;
+            top: 55%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: white;
+            border: 1px solid var(--sand);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            color: var(--gold-primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .experience-nav:hover {
+            background: var(--gold-primary);
+            color: white;
+            border-color: var(--gold-primary);
+        }
+
+        .experience-nav:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .experience-nav svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2;
+        }
+
+        .experience-nav-left {
+            left: 16px;
+        }
+
+        .experience-nav-right {
+            right: 16px;
+        }
+
+        /* Dot navigation */
+        .experience-dots {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 0 8px;
+        }
+
+        .experience-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: none;
+            background: var(--text-medium);
+            opacity: 0.25;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        .experience-dot.active {
+            opacity: 1;
+            background: var(--gold-primary);
+            transform: scale(1.3);
+        }
+
+        .experience-dot:hover:not(.active) {
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .experience-card {
+                flex: 0 0 280px;
+                padding: 32px 24px;
+            }
+
+            .experience-number {
+                font-size: 3rem;
+            }
+
+            .experience-nav {
+                width: 38px;
+                height: 38px;
+            }
+
+            .experience-nav svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .experience-dots {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .experience-carousel {
+                padding: 16px 24px 24px;
+                gap: 16px;
+            }
+
+            .experience-card {
+                flex: 0 0 260px;
+                padding: 28px 20px;
+            }
+
+            .experience-number {
+                font-size: 2.5rem;
+                top: 12px;
+                right: 16px;
+            }
+
+            .experience-nav-left {
+                left: 8px;
+            }
+
+            .experience-nav-right {
+                right: 8px;
+            }
+
+            .experience-card::after {
+                display: none;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════
            DECORATIVE ELEMENTS
            ═══════════════════════════════════════════════════════════ */
 
@@ -888,10 +1119,10 @@
             </div>
         </div>
 
-        <!-- About Section Extended Modules -->
-        <div class="max-w-6xl mx-auto mt-32 lg:mt-40 px-8 lg:px-12">
+        <!-- About Section Extended Modules - Horizontal Carousel -->
+        <div class="experience-carousel-section relative mt-24 lg:mt-40">
             <!-- Section intro -->
-            <div class="text-center mb-20 reveal">
+            <div class="text-center mb-12 lg:mb-20 reveal px-8">
                 <div class="flex items-center justify-center gap-6 mb-6">
                     <span class="w-16 h-px bg-gradient-to-r from-transparent to-[var(--gold-primary)]/40"></span>
                     <span class="text-[var(--gold-primary)] text-[0.6rem] tracking-[0.4em] uppercase font-medium">The Experience</span>
@@ -899,43 +1130,63 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-px bg-[var(--sand)]/50">
+            <!-- Navigation Arrows -->
+            <button class="experience-nav experience-nav-left" aria-label="Scroll left">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
+            </button>
+            <button class="experience-nav experience-nav-right" aria-label="Scroll right">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6" />
+                </svg>
+            </button>
+
+            <!-- Horizontal Scroll Container -->
+            <div class="experience-carousel reveal">
 
                 <!-- Card 1: Why Chamber Music? -->
-                <div class="reveal bg-[#f8f8f8] p-10 lg:p-14 group hover:bg-white transition-colors duration-500">
-                    <span class="text-[var(--teal)] text-[0.55rem] tracking-[0.35em] uppercase font-semibold mb-8 block">The Art Form</span>
-                    <h3 class="font-cormorant italic text-3xl lg:text-4xl text-[var(--text-dark)] mb-6 leading-tight">Why Chamber<br>Music?</h3>
-                    <div class="w-10 h-px bg-[var(--teal)]/40 mb-6 group-hover:w-16 transition-all duration-500"></div>
-                    <p class="text-[var(--text-medium)] font-light leading-[1.9] text-[0.9rem]">
+                <div class="experience-card group">
+                    <span class="experience-number">01</span>
+                    <span class="text-[var(--teal)] text-[0.55rem] tracking-[0.35em] uppercase font-semibold mb-6 block">The Art Form</span>
+                    <h3 class="font-cormorant italic text-2xl lg:text-3xl text-[var(--text-dark)] mb-4 leading-tight">Why Chamber Music?</h3>
+                    <div class="w-10 h-px bg-[var(--teal)]/40 mb-5 group-hover:w-16 transition-all duration-500"></div>
+                    <p class="text-[var(--text-medium)] font-light leading-[1.8] text-[0.875rem]">
                         Classical music at its most direct. A handful of players, no distance, total intensity. A conversation—intimate, virtuosic, human.
                     </p>
                 </div>
 
                 <!-- Card 2: Who It's For -->
-                <div class="reveal reveal-delay-1 bg-[#f8f8f8] p-10 lg:p-14 group hover:bg-white transition-colors duration-500 border-t lg:border-t-0 border-[var(--sand)]">
-                    <span class="text-[var(--gold-primary)] text-[0.55rem] tracking-[0.35em] uppercase font-semibold mb-8 block">The Audience</span>
-                    <h3 class="font-cormorant italic text-3xl lg:text-4xl text-[var(--text-dark)] mb-6 leading-tight">Who It's<br>For</h3>
-                    <div class="w-10 h-px bg-[var(--gold-primary)]/40 mb-6 group-hover:w-16 transition-all duration-500"></div>
-                    <div class="space-y-4 text-[var(--text-medium)] font-light text-[0.9rem] leading-[1.9]">
+                <div class="experience-card group">
+                    <span class="experience-number">02</span>
+                    <span class="text-[var(--gold-primary)] text-[0.55rem] tracking-[0.35em] uppercase font-semibold mb-6 block">The Audience</span>
+                    <h3 class="font-cormorant italic text-2xl lg:text-3xl text-[var(--text-dark)] mb-4 leading-tight">Who It's For</h3>
+                    <div class="w-10 h-px bg-[var(--gold-primary)]/40 mb-5 group-hover:w-16 transition-all duration-500"></div>
+                    <div class="space-y-3 text-[var(--text-medium)] font-light text-[0.875rem] leading-[1.8]">
                         <p>Classical devotees seeking the real thing.</p>
                         <p>Curious newcomers ready to listen closely.</p>
                         <p>Anyone looking for a memorable night out.</p>
                     </div>
-                    <p class="text-[var(--text-dark)] text-[0.85rem] mt-8 font-cormorant italic text-lg">
-                        Come for the prestige. Stay for the connection.
-                    </p>
                 </div>
 
                 <!-- Card 3: First Time? -->
-                <div class="reveal reveal-delay-2 bg-[#f8f8f8] p-10 lg:p-14 group hover:bg-white transition-colors duration-500 border-t lg:border-t-0 border-[var(--sand)]">
-                    <span class="text-[var(--teal)] text-[0.55rem] tracking-[0.35em] uppercase font-semibold mb-8 block">New Here?</span>
-                    <h3 class="font-cormorant italic text-3xl lg:text-4xl text-[var(--text-dark)] mb-6 leading-tight">First<br>Time?</h3>
-                    <div class="w-10 h-px bg-[var(--teal)]/40 mb-6 group-hover:w-16 transition-all duration-500"></div>
-                    <p class="text-[var(--text-medium)] font-light leading-[1.9] text-[0.9rem]">
-                        New to classical? Perfect. Applause is allowed. Curiosity is encouraged. Just come ready to listen.
+                <div class="experience-card group">
+                    <span class="experience-number">03</span>
+                    <span class="text-[var(--teal)] text-[0.55rem] tracking-[0.35em] uppercase font-semibold mb-6 block">New Here?</span>
+                    <h3 class="font-cormorant italic text-2xl lg:text-3xl text-[var(--text-dark)] mb-4 leading-tight">First Time?</h3>
+                    <div class="w-10 h-px bg-[var(--teal)]/40 mb-5 group-hover:w-16 transition-all duration-500"></div>
+                    <p class="text-[var(--text-medium)] font-light leading-[1.8] text-[0.875rem]">
+                        New to classical? Perfect. Applause is welcome. Curiosity is encouraged. Just come ready to listen.
                     </p>
                 </div>
 
+            </div>
+
+            <!-- Dot Navigation (Mobile) -->
+            <div class="experience-dots">
+                <button class="experience-dot active" aria-label="Go to card 1"></button>
+                <button class="experience-dot" aria-label="Go to card 2"></button>
+                <button class="experience-dot" aria-label="Go to card 3"></button>
             </div>
         </div>
     </section>
@@ -1630,6 +1881,80 @@
 
         // Trigger on load
         reveal();
+
+        // Experience Carousel
+        const expCarousel = document.querySelector('.experience-carousel');
+        const expCards = document.querySelectorAll('.experience-card');
+        const expNavLeft = document.querySelector('.experience-nav-left');
+        const expNavRight = document.querySelector('.experience-nav-right');
+        const expDots = document.querySelectorAll('.experience-dot');
+
+        if (expCarousel && expCards.length > 0) {
+            let expActiveIndex = 0;
+
+            function updateExpCarouselState() {
+                const { scrollLeft, scrollWidth, clientWidth } = expCarousel;
+
+                // Update nav button states
+                expNavLeft.disabled = scrollLeft <= 0;
+                expNavRight.disabled = scrollLeft + clientWidth >= scrollWidth - 1;
+
+                // Find active card (closest to center)
+                const containerRect = expCarousel.getBoundingClientRect();
+                const containerCenter = containerRect.left + containerRect.width / 2;
+
+                let closestIndex = 0;
+                let closestDistance = Infinity;
+
+                expCards.forEach((card, index) => {
+                    const cardRect = card.getBoundingClientRect();
+                    const cardCenter = cardRect.left + cardRect.width / 2;
+                    const distance = Math.abs(containerCenter - cardCenter);
+
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
+                        closestIndex = index;
+                    }
+
+                    // Update active class
+                    card.classList.toggle('active', index === closestIndex);
+                });
+
+                // Update dots
+                expDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === closestIndex);
+                });
+
+                expActiveIndex = closestIndex;
+            }
+
+            function scrollExpTo(direction) {
+                const cardWidth = expCards[0].offsetWidth + 24; // card + gap
+                const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
+                expCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+
+            function scrollExpToIndex(index) {
+                const card = expCards[index];
+                if (card) {
+                    const containerRect = expCarousel.getBoundingClientRect();
+                    const cardRect = card.getBoundingClientRect();
+                    const scrollLeft = expCarousel.scrollLeft + cardRect.left - containerRect.left - (containerRect.width - cardRect.width) / 2;
+                    expCarousel.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+                }
+            }
+
+            // Event listeners
+            expCarousel.addEventListener('scroll', updateExpCarouselState);
+            expNavLeft.addEventListener('click', () => scrollExpTo('left'));
+            expNavRight.addEventListener('click', () => scrollExpTo('right'));
+            expDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => scrollExpToIndex(index));
+            });
+
+            // Initial state
+            updateExpCarouselState();
+        }
 
         // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
