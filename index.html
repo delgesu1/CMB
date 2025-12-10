@@ -388,6 +388,34 @@
             position: relative;
         }
 
+        /* Fade overlays - controlled by JS based on scroll position */
+        .experience-fade-left,
+        .experience-fade-right {
+            position: absolute;
+            top: 80px;
+            bottom: 60px;
+            width: 60px;
+            pointer-events: none;
+            z-index: 3;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .experience-fade-left {
+            left: 0;
+            background: linear-gradient(to right, rgba(248,248,248,0.95), transparent);
+        }
+
+        .experience-fade-right {
+            right: 0;
+            background: linear-gradient(to left, rgba(248,248,248,0.95), transparent);
+        }
+
+        .experience-fade-left.visible,
+        .experience-fade-right.visible {
+            opacity: 1;
+        }
+
         .experience-carousel {
             display: flex;
             gap: 24px;
@@ -1086,6 +1114,10 @@
                     <span class="w-16 h-px bg-gradient-to-l from-transparent to-[var(--gold-primary)]/40"></span>
                 </div>
             </div>
+
+            <!-- Fade overlays -->
+            <div class="experience-fade-left"></div>
+            <div class="experience-fade-right visible"></div>
 
             <!-- Navigation Arrows -->
             <button class="experience-nav experience-nav-left" aria-label="Scroll left">
@@ -1845,6 +1877,8 @@
         const expNavLeft = document.querySelector('.experience-nav-left');
         const expNavRight = document.querySelector('.experience-nav-right');
         const expDots = document.querySelectorAll('.experience-dot');
+        const expFadeLeft = document.querySelector('.experience-fade-left');
+        const expFadeRight = document.querySelector('.experience-fade-right');
 
         if (expCarousel && expCards.length > 0) {
             let expActiveIndex = 0;
@@ -1853,8 +1887,15 @@
                 const { scrollLeft, scrollWidth, clientWidth } = expCarousel;
 
                 // Update nav button states
-                expNavLeft.disabled = scrollLeft <= 0;
-                expNavRight.disabled = scrollLeft + clientWidth >= scrollWidth - 1;
+                const canScrollLeft = scrollLeft > 5;
+                const canScrollRight = scrollLeft + clientWidth < scrollWidth - 5;
+
+                expNavLeft.disabled = !canScrollLeft;
+                expNavRight.disabled = !canScrollRight;
+
+                // Update fade overlays
+                if (expFadeLeft) expFadeLeft.classList.toggle('visible', canScrollLeft);
+                if (expFadeRight) expFadeRight.classList.toggle('visible', canScrollRight);
 
                 // Find active card (closest to center)
                 const containerRect = expCarousel.getBoundingClientRect();
