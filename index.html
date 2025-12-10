@@ -342,10 +342,10 @@
 
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(25px);
             transition:
-                opacity 1.4s var(--ease-crescendo),
-                transform 1.4s var(--ease-crescendo);
+                opacity 0.8s var(--ease-crescendo),
+                transform 0.8s var(--ease-crescendo);
         }
 
         .reveal.active {
@@ -354,16 +354,16 @@
         }
 
         /* Staggered delays for orchestral feel */
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
-        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-1 { transition-delay: 0.05s; }
+        .reveal-delay-2 { transition-delay: 0.1s; }
+        .reveal-delay-3 { transition-delay: 0.15s; }
+        .reveal-delay-4 { transition-delay: 0.2s; }
 
         /* Fade in from sides */
         .reveal-left {
             opacity: 0;
-            transform: translateX(-60px);
-            transition: all 1.2s var(--ease-crescendo);
+            transform: translateX(-40px);
+            transition: all 0.7s var(--ease-crescendo);
         }
         .reveal-left.active {
             opacity: 1;
@@ -372,8 +372,8 @@
 
         .reveal-right {
             opacity: 0;
-            transform: translateX(60px);
-            transition: all 1.2s var(--ease-crescendo);
+            transform: translateX(40px);
+            transition: all 0.7s var(--ease-crescendo);
         }
         .reveal-right.active {
             opacity: 1;
@@ -839,7 +839,7 @@
 
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <!-- Image Column -->
-            <div class="relative reveal-left group">
+            <div class="relative reveal-left group order-2 lg:order-1">
                 <!-- Elegant frame -->
                 <div class="absolute -top-8 -left-8 w-full h-full border border-[var(--gold-primary)]/20 z-0 hidden md:block transition-all duration-700 group-hover:-top-10 group-hover:-left-10"></div>
                 <div class="absolute -bottom-8 -right-8 w-full h-full border border-[var(--gold-primary)]/10 z-0 hidden md:block transition-all duration-700 group-hover:-bottom-10 group-hover:-right-10"></div>
@@ -858,7 +858,7 @@
             </div>
 
             <!-- Content Column -->
-            <div class="reveal-right lg:pl-8 relative">
+            <div class="reveal-right lg:pl-8 relative order-1 lg:order-2">
                 <!-- Section label -->
                 <div class="flex items-center gap-4 mb-8">
                     <span class="w-12 h-px bg-[var(--teal)]"></span>
@@ -1606,7 +1606,7 @@
         function reveal() {
             const reveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
             const windowHeight = window.innerHeight;
-            const revealPoint = 120;
+            const revealPoint = 200;
 
             reveals.forEach((element) => {
                 const elementTop = element.getBoundingClientRect().top;
@@ -1668,13 +1668,21 @@
         const navbar = document.getElementById('navbar');
         const navLogo = document.querySelector('.nav-logo');
 
+        function applyFrostedBackground() {
+            navbar.style.background = `rgba(255, 255, 255, 0.85)`;
+            navbar.style.backdropFilter = 'blur(24px) saturate(180%)';
+            navbar.style.webkitBackdropFilter = 'blur(24px) saturate(180%)';
+            navbar.style.boxShadow = `0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03)`;
+        }
+
         function updateNavbar() {
             const scrollY = window.scrollY;
             const scrollThreshold = 100;
             const isMobile = window.innerWidth < 768;
 
-            // Skip shrinking animation on mobile
+            // Mobile always gets frosted background
             if (isMobile) {
+                applyFrostedBackground();
                 return;
             }
 
@@ -1686,10 +1694,7 @@
 
             if (scrollY > 10) {
                 // Scrolled state - 85% white background with premium blur
-                navbar.style.background = `rgba(255, 255, 255, 0.85)`;
-                navbar.style.backdropFilter = 'blur(24px) saturate(180%)';
-                navbar.style.webkitBackdropFilter = 'blur(24px) saturate(180%)';
-                navbar.style.boxShadow = `0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03)`;
+                applyFrostedBackground();
                 navbar.classList.add('nav-scrolled');
             } else {
                 // Top state
