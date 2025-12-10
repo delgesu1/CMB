@@ -1926,12 +1926,6 @@
                 expActiveIndex = closestIndex;
             }
 
-            function scrollExpTo(direction) {
-                const cardWidth = expCards[0].offsetWidth + 24; // card + gap
-                const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
-                expCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            }
-
             function scrollExpToIndex(index) {
                 const card = expCards[index];
                 if (card) {
@@ -1942,10 +1936,17 @@
                 }
             }
 
+            function scrollExpByOne(direction) {
+                const newIndex = direction === 'left'
+                    ? Math.max(0, expActiveIndex - 1)
+                    : Math.min(expCards.length - 1, expActiveIndex + 1);
+                scrollExpToIndex(newIndex);
+            }
+
             // Event listeners
             expCarousel.addEventListener('scroll', updateExpCarouselState);
-            expNavLeft.addEventListener('click', () => scrollExpTo('left'));
-            expNavRight.addEventListener('click', () => scrollExpTo('right'));
+            expNavLeft.addEventListener('click', () => scrollExpByOne('left'));
+            expNavRight.addEventListener('click', () => scrollExpByOne('right'));
             expDots.forEach((dot, index) => {
                 dot.addEventListener('click', () => scrollExpToIndex(index));
             });
