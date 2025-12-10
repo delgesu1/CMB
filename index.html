@@ -973,9 +973,13 @@
         </div>
 
         <!-- Mobile Menu Button -->
-        <button class="lg:hidden z-50 text-[var(--text-dark)] p-2" id="mobile-menu-btn" aria-label="Toggle menu">
-            <i data-lucide="menu" class="w-6 h-6 menu-icon"></i>
-            <i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
+        <button class="lg:hidden z-50 text-[var(--text-dark)] p-3 hover:opacity-60 transition-opacity duration-300" id="mobile-menu-btn" aria-label="Toggle menu">
+            <svg class="w-6 h-6 menu-icon transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg class="w-6 h-6 close-icon hidden transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(90deg);">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
         </button>
 
         <!-- Desktop CTA -->
@@ -985,16 +989,42 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[var(--ivory)] z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-500">
-        <div class="flex flex-col space-y-8 text-center">
-            <a href="#about" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">About</a>
-            <a href="#season" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Concerts</a>
-            <a href="venues.html" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Venues</a>
-            <a href="artists.html" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Artists</a>
-            <a href="#gallery" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Media</a>
-            <a href="#donate" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Support</a>
-            <div class="pt-4">
-                <a href="#contact" class="btn-primary"><span>Contact</span></a>
+    <div id="mobile-menu" class="fixed inset-0 z-40 opacity-0 pointer-events-none transition-opacity duration-500">
+        <!-- Backdrop with frosted effect -->
+        <div class="absolute inset-0 bg-[var(--ivory)] backdrop-blur-md" style="background: linear-gradient(135deg, rgba(255, 250, 244, 0.95) 0%, rgba(255, 250, 244, 0.92) 100%);"></div>
+
+        <!-- Subtle texture overlay -->
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 20% 50%, rgba(166, 93, 79, 0.04) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(61, 107, 95, 0.03) 0%, transparent 50%);"></div>
+
+        <!-- Content -->
+        <div class="relative h-full flex flex-col justify-center items-center">
+            <div class="w-full max-w-sm px-6">
+                <!-- Menu Items -->
+                <div class="flex flex-col space-y-0">
+                    <a href="#about" class="mobile-link py-4 px-4 text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--gold-primary)] transition-colors duration-300 opacity-0" style="transform: translateY(20px);">About</a>
+                    <div class="h-px bg-gradient-to-r from-transparent via-[var(--gold-primary)]/20 to-transparent"></div>
+
+                    <a href="#season" class="mobile-link py-4 px-4 text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--gold-primary)] transition-colors duration-300 opacity-0" style="transform: translateY(20px);">Concerts</a>
+                    <div class="h-px bg-gradient-to-r from-transparent via-[var(--gold-primary)]/20 to-transparent"></div>
+
+                    <a href="venues.html" class="mobile-link py-4 px-4 text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--gold-primary)] transition-colors duration-300 opacity-0" style="transform: translateY(20px);">Venues</a>
+                    <div class="h-px bg-gradient-to-r from-transparent via-[var(--gold-primary)]/20 to-transparent"></div>
+
+                    <a href="artists.html" class="mobile-link py-4 px-4 text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--gold-primary)] transition-colors duration-300 opacity-0" style="transform: translateY(20px);">Artists</a>
+                    <div class="h-px bg-gradient-to-r from-transparent via-[var(--gold-primary)]/20 to-transparent"></div>
+
+                    <a href="#gallery" class="mobile-link py-4 px-4 text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--gold-primary)] transition-colors duration-300 opacity-0" style="transform: translateY(20px);">Media</a>
+                    <div class="h-px bg-gradient-to-r from-transparent via-[var(--gold-primary)]/20 to-transparent"></div>
+
+                    <a href="#donate" class="mobile-link py-4 px-4 text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--gold-primary)] transition-colors duration-300 opacity-0" style="transform: translateY(20px);">Support</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="mt-10 opacity-0" style="transform: translateY(20px);">
+                    <a href="#contact" class="btn-primary block text-center py-3 px-6">
+                        <span>Contact</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -1977,12 +2007,13 @@
             updateExpCarouselState();
         }
 
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle with Premium Animations
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         const menuIcon = btn?.querySelector('.menu-icon');
         const closeIcon = btn?.querySelector('.close-icon');
         const links = document.querySelectorAll('.mobile-link');
+        const cta = document.querySelector('#mobile-menu .mt-10');
         let isMenuOpen = false;
 
         function toggleMenu(open) {
@@ -1991,10 +2022,43 @@
             menu.style.pointerEvents = isMenuOpen ? 'auto' : 'none';
             document.body.style.overflow = isMenuOpen ? 'hidden' : '';
 
-            // Toggle icons
+            // Toggle icons with rotation
             if (menuIcon && closeIcon) {
                 menuIcon.classList.toggle('hidden', isMenuOpen);
                 closeIcon.classList.toggle('hidden', !isMenuOpen);
+
+                if (isMenuOpen) {
+                    closeIcon.style.transform = 'rotate(90deg)';
+                } else {
+                    menuIcon.style.transform = 'rotate(0deg)';
+                }
+            }
+
+            // Animate menu items
+            if (isMenuOpen) {
+                // Stagger animation on open
+                links.forEach((link, index) => {
+                    setTimeout(() => {
+                        link.style.opacity = '1';
+                        link.style.transform = 'translateY(0)';
+                    }, index * 60);
+                });
+
+                // Animate CTA button
+                setTimeout(() => {
+                    cta.style.opacity = '1';
+                    cta.style.transform = 'translateY(0)';
+                }, links.length * 60 + 60);
+            } else {
+                // Reset all animations
+                links.forEach(link => {
+                    link.style.opacity = '0';
+                    link.style.transform = 'translateY(20px)';
+                });
+                if (cta) {
+                    cta.style.opacity = '0';
+                    cta.style.transform = 'translateY(20px)';
+                }
             }
         }
 
@@ -2008,6 +2072,13 @@
                     toggleMenu(false);
                 });
             });
+
+            // Close menu on CTA click
+            if (cta) {
+                cta.querySelector('a').addEventListener('click', () => {
+                    toggleMenu(false);
+                });
+            }
         }
 
         // Navbar Scroll Effect - Smooth Shrinking Animation
