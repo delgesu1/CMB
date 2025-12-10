@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Venues | Chamber Music Boise</title>
+    <meta name="description" content="Discover the six extraordinary venues where Chamber Music Boise presents intimate classical performances across the Treasure Valley.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* ═══════════════════════════════════════════════════════════
+           CHAMBER MUSIC BOISE - Premium Classical Experience
+           Aesthetic: Concert Hall Intimacy + Editorial Sophistication
+           ═══════════════════════════════════════════════════════════ */
+
+        :root {
+            /* ═══ MODERN RECITAL PALETTE ═══ */
+            --gold-primary: #a65d4f;
+            --gold-light: #c4786a;
+            --gold-warm: #8f4f42;
+            --champagne: #f5e6dc;
+
+            /* Secondary Accent - Forest Teal */
+            --teal: #3d6b5f;
+            --teal-light: #4d8577;
+            --teal-dark: #2d5347;
+
+            /* Highlight - Retained Gold */
+            --accent-gold: #c9a227;
+            --accent-gold-light: #dbb94a;
+
+            /* True Dark */
+            --charcoal: #1a1a1a;
+            --charcoal-warm: #222222;
+            --charcoal-soft: #2a2a2a;
+            --charcoal-light: #333333;
+
+            /* Clean Light Backgrounds */
+            --ivory: #ffffff;
+            --ivory-warm: #fafafa;
+            --cream: #f5f5f5;
+            --cream-dark: #ebebeb;
+            --sand: #d9d9d9;
+
+            /* Text colors */
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #717171;
+            --text-muted: #9a9a9a;
+
+            /* Accent colors */
+            --burgundy-soft: #7d5a50;
+            --rose-muted: #a67878;
+            --terracotta: #a65d4f;
+
+            /* Fresh accents */
+            --coral: #e07a5f;
+            --sage: #81a69b;
+
+            /* Musical timing curves */
+            --ease-crescendo: cubic-bezier(0.22, 0.61, 0.36, 1);
+            --ease-decrescendo: cubic-bezier(0.61, 0.22, 1, 0.36);
+            --ease-legato: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --ease-staccato: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--ivory);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Hide default cursor only on non-touch devices */
+        @media (pointer: fine) {
+            body, body * {
+                cursor: none !important;
+            }
+        }
+
+        /* Atmospheric Background */
+        .atmosphere {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .atmosphere::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 120% 80% at 50% -20%, rgba(166, 93, 79, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse 100% 100% at 0% 100%, rgba(61, 107, 95, 0.04) 0%, transparent 40%),
+                radial-gradient(ellipse 80% 80% at 100% 0%, rgba(166, 93, 79, 0.03) 0%, transparent 40%);
+        }
+
+        .atmosphere::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 90% 10%, rgba(61, 107, 95, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 10% 90%, rgba(166, 93, 79, 0.04) 0%, transparent 25%);
+            animation: ambientDrift 60s ease-in-out infinite;
+        }
+
+        @keyframes ambientDrift {
+            0%, 100% { transform: translate(0, 0); opacity: 1; }
+            50% { transform: translate(0.5%, -0.5%); opacity: 0.9; }
+        }
+
+        .texture-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.015;
+            mix-blend-mode: multiply;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .vignette {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9997;
+            background: radial-gradient(ellipse 90% 90% at 50% 50%, transparent 0%, rgba(245, 245, 245, 0.4) 100%);
+        }
+
+        /* Custom Cursor */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 2147483647;
+            pointer-events: none;
+        }
+
+        /* Hide custom cursor on touch devices */
+        @media (pointer: coarse) {
+            .cursor-dot,
+            .cursor-outline {
+                display: none !important;
+            }
+        }
+
+        .cursor-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--gold-primary);
+        }
+
+        .cursor-outline {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--gold-primary);
+            opacity: 0.4;
+            transition: all 0.3s var(--ease-legato);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Italiana', serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            line-height: 1.1;
+            color: var(--text-dark);
+        }
+
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .text-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: var(--gold-primary);
+        }
+
+        ::selection {
+            background: var(--gold-primary);
+            color: var(--ivory);
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition:
+                opacity 1.4s var(--ease-crescendo),
+                transform 1.4s var(--ease-crescendo);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* Navigation */
+        /* Navbar scrolled state */
+        #navbar {
+            transition:
+                background 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                backdrop-filter 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #navbar.nav-scrolled {
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+        }
+
+        .nav-logo {
+            transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold-primary);
+            transition: width 0.4s var(--ease-legato);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            position: relative;
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-weight: 400;
+            overflow: hidden;
+            transition: all 0.5s var(--ease-legato);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gold-primary);
+            transform: translateX(-101%);
+            transition: transform 0.5s var(--ease-crescendo);
+        }
+
+        .btn-primary:hover {
+            color: var(--ivory);
+        }
+
+        .btn-primary:hover::before {
+            transform: translateX(0);
+        }
+
+        .btn-primary span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Venue Card Styles */
+        .venue-card {
+            transition: all 0.5s var(--ease-legato);
+        }
+
+        .venue-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .venue-card:hover .venue-image {
+            transform: scale(1.05);
+        }
+
+        .venue-image {
+            transition: transform 0.8s var(--ease-crescendo);
+        }
+
+        /* Venue Detail Panel */
+        .venue-detail {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-top-width: 0;
+            transition: max-height 0.6s var(--ease-crescendo),
+                        opacity 0.4s var(--ease-crescendo),
+                        padding 0.6s var(--ease-crescendo),
+                        border-top-width 0.3s var(--ease-crescendo);
+        }
+
+        .venue-detail.expanded {
+            max-height: 600px;
+            opacity: 1;
+            padding-top: 1.5rem;
+            padding-bottom: 2rem;
+            border-top-width: 1px;
+        }
+
+        /* Grid lines */
+        .grid-line {
+            position: absolute;
+            background: linear-gradient(180deg, transparent, rgba(166, 93, 79, 0.1), transparent);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* House Concerts Abstract Placeholder */
+        .house-concerts-placeholder {
+            background: linear-gradient(135deg,
+                var(--champagne) 0%,
+                #f5e6dc 25%,
+                #ede0d4 50%,
+                #e6ccb2 75%,
+                #ddb892 100%
+            );
+            position: relative;
+            overflow: hidden;
+        }
+
+        .house-concerts-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 30% 40%, rgba(166, 93, 79, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(61, 107, 95, 0.1) 0%, transparent 40%);
+        }
+
+        .house-concerts-placeholder::after {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 80px;
+            border: 2px solid rgba(166, 93, 79, 0.3);
+            border-radius: 2px 2px 0 0;
+            background: transparent;
+        }
+
+        /* Candle glow effect */
+        .candle-glow {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, rgba(255, 200, 100, 0.8) 0%, rgba(255, 150, 50, 0.4) 50%, transparent 70%);
+            border-radius: 50%;
+            animation: flicker 3s ease-in-out infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.9); }
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- Atmospheric Background System -->
+    <div class="atmosphere"></div>
+    <div class="texture-overlay"></div>
+    <div class="vignette"></div>
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Elegant Grid Lines -->
+    <div class="grid-line w-px h-full left-16 top-0 hidden lg:block fixed opacity-30"></div>
+    <div class="grid-line w-px h-full right-16 top-0 hidden lg:block fixed opacity-30"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-700 py-2 px-4 md:py-3 md:px-6 lg:px-12 flex justify-between items-center" id="navbar">
+        <!-- Logo -->
+        <div class="text-lg md:text-xl tracking-[0.2em] md:tracking-[0.3em] font-cinzel font-medium uppercase">
+            <a href="index.html" class="block">
+                <img src="logo.png" alt="Chamber Music Boise" class="nav-logo h-16 md:h-20 lg:h-24 w-auto transition-all duration-500 ease-out">
+            </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex space-x-8 xl:space-x-12 text-[0.7rem] tracking-[0.15em] font-normal uppercase">
+            <a href="index.html#about" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">About</a>
+            <a href="index.html#season" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">Season</a>
+            <a href="venues.html" class="nav-link active text-[var(--text-dark)] transition-colors duration-300">Venues</a>
+            <a href="artists.html" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">Artists</a>
+            <a href="index.html#gallery" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">Media</a>
+            <a href="index.html#donate" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">Support</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden z-50 text-[var(--text-dark)] p-2" id="mobile-menu-btn" aria-label="Toggle menu">
+            <i data-lucide="menu" class="w-6 h-6 menu-icon"></i>
+            <i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
+        </button>
+
+        <!-- Desktop CTA -->
+        <a href="index.html#contact" class="hidden lg:block btn-primary">
+            <span>Inquire</span>
+        </a>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[var(--ivory)] z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-500">
+        <div class="flex flex-col space-y-8 text-center">
+            <a href="index.html#about" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">About</a>
+            <a href="index.html#season" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Season</a>
+            <a href="venues.html" class="mobile-link text-2xl font-cormorant italic text-[var(--text-dark)]">Venues</a>
+            <a href="artists.html" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Artists</a>
+            <a href="index.html#gallery" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Media</a>
+            <a href="index.html#donate" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Support</a>
+            <div class="pt-4">
+                <a href="index.html#contact" class="btn-primary"><span>Contact</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="relative w-full min-h-[60vh] flex items-center justify-center overflow-hidden bg-[var(--ivory)] pt-32 pb-16">
+        <!-- Subtle background -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_40%,rgba(166,93,79,0.05),transparent)]"></div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-1/3 left-1/4 w-px h-24 bg-gradient-to-b from-transparent via-[var(--gold-primary)]/15 to-transparent hidden lg:block"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-px h-24 bg-gradient-to-b from-transparent via-[var(--gold-primary)]/15 to-transparent hidden lg:block"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <!-- Label -->
+            <p class="reveal text-[var(--gold-primary)] text-[0.65rem] tracking-[0.5em] uppercase mb-8 font-medium flex items-center justify-center gap-4">
+                <span class="w-8 h-px bg-[var(--gold-primary)]/50"></span>
+                Six Extraordinary Settings
+                <span class="w-8 h-px bg-[var(--gold-primary)]/50"></span>
+            </p>
+
+            <!-- Main Title -->
+            <h1 class="reveal reveal-delay-1 mb-8">
+                <span class="block text-5xl md:text-7xl lg:text-8xl font-light tracking-wide text-[var(--text-dark)] leading-[0.95]">Our</span>
+                <span class="block font-cormorant italic text-5xl md:text-7xl lg:text-8xl text-[var(--gold-primary)] font-light mt-2">Venues</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="reveal reveal-delay-2 font-cormorant text-xl md:text-2xl italic font-light text-[var(--text-medium)] max-w-2xl mx-auto leading-relaxed mt-8">
+                From historic sanctuaries to intimate lounges, each space offers a unique encounter with chamber music.
+            </p>
+        </div>
+    </header>
+
+    <!-- Venues Grid Section -->
+    <section class="py-16 lg:py-24 px-6 lg:px-12 bg-[#f8f8f8]">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Venues Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+
+                <!-- Venue 1: Tuttle House -->
+                <div id="tuttle-house" class="reveal venue-card group">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg shadow-black/5 hover:shadow-xl hover:shadow-black/10 transition-shadow duration-500">
+                        <!-- Image -->
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="Series Blurbs/Tuttle House Concert/Tuttle House.jpg"
+                                 alt="Bishop Tuttle House - Historic stone building"
+                                 class="venue-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="text-[0.55rem] tracking-[0.2em] uppercase text-white/90 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">Historic</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-6 lg:p-8">
+                            <h3 class="text-xl lg:text-2xl font-cinzel text-[var(--charcoal)] mb-2">Tuttle House Concerts</h3>
+                            <p class="text-[var(--text-light)] text-sm mb-4">St. Michael's Episcopal Cathedral</p>
+
+                            <p class="text-[var(--text-medium)] text-sm leading-relaxed mb-6">
+                                Intimate hour-long performances in a historic stone sanctuary, featuring masterworks, contemporary pieces, and hidden gems of the chamber repertoire.
+                            </p>
+
+                            <!-- Expand Button -->
+                            <button onclick="toggleVenueDetail('tuttle-detail')" class="flex items-center gap-2 text-[var(--gold-primary)] text-[0.7rem] tracking-[0.15em] uppercase font-medium hover:text-[var(--gold-warm)] transition-colors">
+                                <span>Learn More</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="tuttle-chevron"></i>
+                            </button>
+                        </div>
+
+                        <!-- Expandable Detail -->
+                        <div id="tuttle-detail" class="venue-detail px-6 lg:px-8 border-[var(--sand)]">
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="users" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Partnership</span>
+                                        <span class="text-[var(--text-light)] text-sm">Tuttle House at St. Michael's & Idaho Concerts in Care</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="mic" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Special Feature</span>
+                                        <span class="text-[var(--text-light)] text-sm">"Inside Chamber Music with Bradley Berg" - insights into the masterworks</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="ticket" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Admission</span>
+                                        <span class="text-[var(--text-light)] text-sm">Suggested donation $30 adults · Students & children free</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="heart" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Experience</span>
+                                        <span class="text-[var(--text-light)] text-sm">Complimentary refreshments & meet-the-musicians reception following each concert</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venue 2: First Presbyterian -->
+                <div id="first-presbyterian" class="reveal reveal-delay-1 venue-card group">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg shadow-black/5 hover:shadow-xl hover:shadow-black/10 transition-shadow duration-500">
+                        <!-- Image -->
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="Series Blurbs/Concerts at First Presbyterian/Firstpres6.webp"
+                                 alt="First Presbyterian Church sanctuary with grand piano"
+                                 class="venue-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="text-[0.55rem] tracking-[0.2em] uppercase text-white/90 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">Grand</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-6 lg:p-8">
+                            <h3 class="text-xl lg:text-2xl font-cinzel text-[var(--charcoal)] mb-2">First Presbyterian Church</h3>
+                            <p class="text-[var(--text-light)] text-sm mb-4">Downtown Boise</p>
+
+                            <p class="text-[var(--text-medium)] text-sm leading-relaxed mb-6">
+                                A magnificent sanctuary with soaring wooden arches, exceptional acoustics, and the dramatic backdrop of a grand pipe organ.
+                            </p>
+
+                            <!-- Expand Button -->
+                            <button onclick="toggleVenueDetail('fpc-detail')" class="flex items-center gap-2 text-[var(--gold-primary)] text-[0.7rem] tracking-[0.15em] uppercase font-medium hover:text-[var(--gold-warm)] transition-colors">
+                                <span>Learn More</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="fpc-chevron"></i>
+                            </button>
+                        </div>
+
+                        <!-- Expandable Detail -->
+                        <div id="fpc-detail" class="venue-detail px-6 lg:px-8 border-[var(--sand)]">
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="volume-2" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Acoustics</span>
+                                        <span class="text-[var(--text-light)] text-sm">Exceptional natural reverb from timber-frame construction and vaulted ceilings</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="church" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Character</span>
+                                        <span class="text-[var(--text-light)] text-sm">Traditional concert experience with reverent atmosphere and comfortable seating</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="music" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Programming</span>
+                                        <span class="text-[var(--text-light)] text-sm">Full-length concerts featuring larger ensemble works and solo recitals</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venue 3: Lyrical Libations -->
+                <div id="lyrical-libations" class="reveal reveal-delay-2 venue-card group">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg shadow-black/5 hover:shadow-xl hover:shadow-black/10 transition-shadow duration-500">
+                        <!-- Image -->
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="Series Blurbs/Lyrical Libations/8 horses loung 1.jpg"
+                                 alt="8 Horses Lounge - Sophisticated speakeasy setting"
+                                 class="venue-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="text-[0.55rem] tracking-[0.2em] uppercase text-white/90 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">Intimate</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-6 lg:p-8">
+                            <h3 class="text-xl lg:text-2xl font-cinzel text-[var(--charcoal)] mb-2">Lyrical Libations</h3>
+                            <p class="text-[var(--text-light)] text-sm mb-4">8 Horses Lounge</p>
+
+                            <p class="text-[var(--text-medium)] text-sm leading-relaxed mb-6">
+                                Chamber music meets cocktail culture in this sophisticated speakeasy setting, where velvet seating and candlelit ambiance create an unforgettable evening.
+                            </p>
+
+                            <!-- Expand Button -->
+                            <button onclick="toggleVenueDetail('lyrical-detail')" class="flex items-center gap-2 text-[var(--gold-primary)] text-[0.7rem] tracking-[0.15em] uppercase font-medium hover:text-[var(--gold-warm)] transition-colors">
+                                <span>Learn More</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="lyrical-chevron"></i>
+                            </button>
+                        </div>
+
+                        <!-- Expandable Detail -->
+                        <div id="lyrical-detail" class="venue-detail px-6 lg:px-8 border-[var(--sand)]">
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="wine" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Experience</span>
+                                        <span class="text-[var(--text-light)] text-sm">Craft cocktails and curated wines paired with intimate musical performances</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="sparkles" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Atmosphere</span>
+                                        <span class="text-[var(--text-light)] text-sm">Plush teal velvet seating, warm candlelight, and art deco elegance</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="users" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Social</span>
+                                        <span class="text-[var(--text-light)] text-sm">A relaxed, conversational setting perfect for newcomers to chamber music</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venue 4: Davis Education Fund -->
+                <div id="davis-fund" class="reveal reveal-delay-3 venue-card group">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg shadow-black/5 hover:shadow-xl hover:shadow-black/10 transition-shadow duration-500">
+                        <!-- Image -->
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="Series Blurbs/Davis Fund Concert/StStephens.jpg"
+                                 alt="St. Stephen's Church with string quartet performing"
+                                 class="venue-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="text-[0.55rem] tracking-[0.2em] uppercase text-white/90 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">Community</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-6 lg:p-8">
+                            <h3 class="text-xl lg:text-2xl font-cinzel text-[var(--charcoal)] mb-2">Davis Education Fund Series</h3>
+                            <p class="text-[var(--text-light)] text-sm mb-4">St. Stephen's Episcopal Church</p>
+
+                            <p class="text-[var(--text-medium)] text-sm leading-relaxed mb-6">
+                                A warm, welcoming chapel adorned with beautiful stained glass, dedicated to bringing chamber music education and performance to the community.
+                            </p>
+
+                            <!-- Expand Button -->
+                            <button onclick="toggleVenueDetail('davis-detail')" class="flex items-center gap-2 text-[var(--gold-primary)] text-[0.7rem] tracking-[0.15em] uppercase font-medium hover:text-[var(--gold-warm)] transition-colors">
+                                <span>Learn More</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="davis-chevron"></i>
+                            </button>
+                        </div>
+
+                        <!-- Expandable Detail -->
+                        <div id="davis-detail" class="venue-detail px-6 lg:px-8 border-[var(--sand)]">
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="graduation-cap" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Mission</span>
+                                        <span class="text-[var(--text-light)] text-sm">Supporting music education through accessible, community-focused concerts</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="sun" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Atmosphere</span>
+                                        <span class="text-[var(--text-light)] text-sm">Natural light through stained glass creates a warm, inspirational setting</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="heart-handshake" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Community</span>
+                                        <span class="text-[var(--text-light)] text-sm">Family-friendly programming with educational components for all ages</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venue 5: Bown Crossing Library -->
+                <div id="bown-crossing" class="reveal reveal-delay-4 venue-card group">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg shadow-black/5 hover:shadow-xl hover:shadow-black/10 transition-shadow duration-500">
+                        <!-- Image -->
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="Series Blurbs/Bown Crossing Library Chamber Music Series/bownlibraryNIGHToutside.jpg"
+                                 alt="Bown Crossing Library at night - Modern architecture"
+                                 class="venue-image w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="text-[0.55rem] tracking-[0.2em] uppercase text-white/90 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">Contemporary</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-6 lg:p-8">
+                            <h3 class="text-xl lg:text-2xl font-cinzel text-[var(--charcoal)] mb-2">Bown Crossing Library</h3>
+                            <p class="text-[var(--text-light)] text-sm mb-4">Southeast Boise</p>
+
+                            <p class="text-[var(--text-medium)] text-sm leading-relaxed mb-6">
+                                Award-winning contemporary architecture meets chamber music in this stunning public library, bringing classical performances to the heart of the community.
+                            </p>
+
+                            <!-- Expand Button -->
+                            <button onclick="toggleVenueDetail('bown-detail')" class="flex items-center gap-2 text-[var(--gold-primary)] text-[0.7rem] tracking-[0.15em] uppercase font-medium hover:text-[var(--gold-warm)] transition-colors">
+                                <span>Learn More</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="bown-chevron"></i>
+                            </button>
+                        </div>
+
+                        <!-- Expandable Detail -->
+                        <div id="bown-detail" class="venue-detail px-6 lg:px-8 border-[var(--sand)]">
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="building-2" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Architecture</span>
+                                        <span class="text-[var(--text-light)] text-sm">Striking modern design with floor-to-ceiling windows and soaring timber ceilings</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Accessibility</span>
+                                        <span class="text-[var(--text-light)] text-sm">Free parking, ADA accessible, and centrally located for Southeast Boise families</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="book-open" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Programming</span>
+                                        <span class="text-[var(--text-light)] text-sm">Family-friendly afternoon concerts in partnership with the Boise Public Library</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venue 6: House Concerts -->
+                <div id="house-concerts" class="reveal reveal-delay-5 venue-card group">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg shadow-black/5 hover:shadow-xl hover:shadow-black/10 transition-shadow duration-500">
+                        <!-- Abstract Placeholder Image -->
+                        <div class="aspect-[4/3] overflow-hidden relative house-concerts-placeholder">
+                            <!-- Decorative elements suggesting intimate music -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <!-- Music stand silhouette -->
+                                <div class="relative">
+                                    <div class="w-16 h-20 border-2 border-[var(--gold-primary)]/30 rounded-sm relative">
+                                        <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-1 h-8 bg-[var(--gold-primary)]/30"></div>
+                                        <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-8 h-1 bg-[var(--gold-primary)]/30"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Candle glows -->
+                            <div class="candle-glow" style="top: 25%; left: 20%;"></div>
+                            <div class="candle-glow" style="top: 30%; right: 25%; animation-delay: 0.5s;"></div>
+                            <div class="candle-glow" style="bottom: 35%; left: 30%; animation-delay: 1s;"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="text-[0.55rem] tracking-[0.2em] uppercase text-[var(--charcoal)]/80 bg-white/60 backdrop-blur-sm px-3 py-1.5 rounded-full">Exclusive</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-6 lg:p-8">
+                            <h3 class="text-xl lg:text-2xl font-cinzel text-[var(--charcoal)] mb-2">House Concerts</h3>
+                            <p class="text-[var(--text-light)] text-sm mb-4">Private Residences</p>
+
+                            <p class="text-[var(--text-medium)] text-sm leading-relaxed mb-6">
+                                The most intimate chamber music experience: world-class performances in the warmth of private homes, continuing the centuries-old salon tradition.
+                            </p>
+
+                            <!-- Expand Button -->
+                            <button onclick="toggleVenueDetail('house-detail')" class="flex items-center gap-2 text-[var(--gold-primary)] text-[0.7rem] tracking-[0.15em] uppercase font-medium hover:text-[var(--gold-warm)] transition-colors">
+                                <span>Learn More</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" id="house-chevron"></i>
+                            </button>
+                        </div>
+
+                        <!-- Expandable Detail -->
+                        <div id="house-detail" class="venue-detail px-6 lg:px-8 border-[var(--sand)]">
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="home" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Setting</span>
+                                        <span class="text-[var(--text-light)] text-sm">Elegant private homes throughout the Treasure Valley, rotating locations</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="lock" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Exclusivity</span>
+                                        <span class="text-[var(--text-light)] text-sm">Limited to 30-40 guests for an unparalleled intimate experience</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="message-circle" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Experience</span>
+                                        <span class="text-[var(--text-light)] text-sm">Conversation with musicians, wine reception, and the magic of music in a living room</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="mail" class="w-4 h-4 text-[var(--gold-primary)] mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <span class="text-[var(--charcoal)] text-sm font-medium block">Join Us</span>
+                                        <span class="text-[var(--text-light)] text-sm">Subscribe to our newsletter for exclusive house concert invitations</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 lg:py-32 px-8 relative overflow-hidden bg-white">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--sand)] to-transparent"></div>
+
+        <div class="max-w-3xl mx-auto text-center reveal">
+            <div class="flex items-center justify-center gap-6 mb-8">
+                <span class="w-12 h-px bg-gradient-to-r from-transparent to-[var(--gold-primary)]"></span>
+                <span class="text-[var(--gold-primary)] text-[0.6rem] tracking-[0.4em] uppercase font-medium">Explore Our Season</span>
+                <span class="w-12 h-px bg-gradient-to-l from-transparent to-[var(--gold-primary)]"></span>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl lg:text-5xl mb-6 text-[var(--text-dark)]">
+                Find Your <span class="italic font-cormorant text-[var(--gold-primary)] font-light">Perfect</span> Concert
+            </h2>
+
+            <p class="text-[var(--text-medium)] mb-10 text-base lg:text-lg font-light leading-relaxed max-w-xl mx-auto">
+                Browse our complete season calendar to discover upcoming performances at each of our extraordinary venues.
+            </p>
+
+            <a href="index.html#season" class="btn-primary px-10 py-4 inline-block">
+                <span>View Season Schedule</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--charcoal)] py-20 px-8 lg:px-24">
+        <div class="max-w-7xl mx-auto">
+            <!-- Top section -->
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-10 mb-16">
+                <!-- Logo -->
+                <div class="text-center lg:text-left">
+                    <a href="index.html" class="text-lg tracking-[0.3em] font-cinzel text-[var(--ivory)]">
+                        Chamber <span class="text-[var(--gold-light)]">Music</span> Boise
+                    </a>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="flex flex-wrap justify-center gap-8 lg:gap-12 text-[0.65rem] tracking-[0.2em] uppercase">
+                    <a href="index.html#about" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">About</a>
+                    <a href="index.html#season" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Season</a>
+                    <a href="venues.html" class="text-[var(--ivory)] transition-colors duration-300">Venues</a>
+                    <a href="artists.html" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Artists</a>
+                    <a href="index.html#gallery" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Gallery</a>
+                    <a href="index.html#donate" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Support</a>
+                    <a href="index.html#contact" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-[var(--gold-light)]/20 to-transparent mb-12"></div>
+
+            <!-- Bottom section -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[0.6rem] tracking-[0.2em] uppercase font-light text-[var(--ivory)]/40">
+                    &copy; 2024 Chamber Music Boise. All Rights Reserved.
+                </p>
+                <p class="font-cormorant italic text-[var(--gold-light)]/60 text-base">
+                    Crafted with elegance
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Custom Cursor Logic
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        // Only enable custom cursor on non-touch devices
+        const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+
+        if (!isTouchDevice && cursorDot && cursorOutline) {
+            let mouseX = 0, mouseY = 0;
+            let outlineX = 0, outlineY = 0;
+
+            window.addEventListener("mousemove", function(e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+
+                cursorDot.style.left = `${mouseX}px`;
+                cursorDot.style.top = `${mouseY}px`;
+            });
+
+            function animateOutline() {
+                outlineX += (mouseX - outlineX) * 0.15;
+                outlineY += (mouseY - outlineY) * 0.15;
+
+                cursorOutline.style.left = `${outlineX}px`;
+                cursorOutline.style.top = `${outlineY}px`;
+
+                requestAnimationFrame(animateOutline);
+            }
+            animateOutline();
+        }
+
+        // Scroll Reveal Animation
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            const windowHeight = window.innerHeight;
+            const revealPoint = 120;
+
+            reveals.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add("active");
+                }
+            });
+        }
+
+        let ticking = false;
+        window.addEventListener("scroll", () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    reveal();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        reveal();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = btn?.querySelector('.menu-icon');
+        const closeIcon = btn?.querySelector('.close-icon');
+        const links = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        function toggleMenu(open) {
+            isMenuOpen = open;
+            menu.style.opacity = isMenuOpen ? '1' : '0';
+            menu.style.pointerEvents = isMenuOpen ? 'auto' : 'none';
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+
+            // Toggle icons
+            if (menuIcon && closeIcon) {
+                menuIcon.classList.toggle('hidden', isMenuOpen);
+                closeIcon.classList.toggle('hidden', !isMenuOpen);
+            }
+        }
+
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                toggleMenu(!isMenuOpen);
+            });
+
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    toggleMenu(false);
+                });
+            });
+        }
+
+        // Navbar Scroll Effect - Smooth Shrinking Animation
+        const navbar = document.getElementById('navbar');
+        const navLogo = document.querySelector('.nav-logo');
+
+        function updateNavbar() {
+            const scrollY = window.scrollY;
+            const scrollThreshold = 100;
+            const isMobile = window.innerWidth < 768;
+
+            // Skip shrinking animation on mobile
+            if (isMobile) {
+                return;
+            }
+
+            // Calculate progress (0 to 1) based on scroll position
+            const progress = Math.min(scrollY / scrollThreshold, 1);
+
+            // Smooth easing function for more natural feel
+            const easeProgress = progress * (2 - progress); // ease-out quad
+
+            if (scrollY > 10) {
+                // Scrolled state - 85% white background with premium blur
+                navbar.style.background = `rgba(255, 255, 255, 0.85)`;
+                navbar.style.backdropFilter = 'blur(24px) saturate(180%)';
+                navbar.style.webkitBackdropFilter = 'blur(24px) saturate(180%)';
+                navbar.style.boxShadow = `0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03)`;
+                navbar.classList.add('nav-scrolled');
+            } else {
+                // Top state
+                navbar.style.background = 'transparent';
+                navbar.style.backdropFilter = 'blur(0px)';
+                navbar.style.webkitBackdropFilter = 'blur(0px)';
+                navbar.style.boxShadow = 'none';
+                navbar.classList.remove('nav-scrolled');
+            }
+
+            // Dynamic logo scaling based on viewport
+            if (navLogo) {
+                const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+
+                let baseHeight, minHeight;
+                if (isTablet) {
+                    baseHeight = 80; // h-20
+                    minHeight = 48;
+                } else {
+                    baseHeight = 96; // h-24
+                    minHeight = 56;
+                }
+
+                const newHeight = baseHeight - (easeProgress * (baseHeight - minHeight));
+                navLogo.style.height = `${newHeight}px`;
+            }
+        }
+
+        // Throttled scroll handler for smooth performance
+        let navTicking = false;
+        window.addEventListener('scroll', () => {
+            if (!navTicking) {
+                window.requestAnimationFrame(() => {
+                    updateNavbar();
+                    navTicking = false;
+                });
+                navTicking = true;
+            }
+        });
+
+        // Initialize on load
+        updateNavbar();
+
+        // Venue Detail Toggle
+        function toggleVenueDetail(detailId) {
+            const detail = document.getElementById(detailId);
+            const chevronId = detailId.replace('-detail', '-chevron');
+            const chevron = document.getElementById(chevronId);
+
+            if (detail.classList.contains('expanded')) {
+                detail.classList.remove('expanded');
+                if (chevron) chevron.style.transform = 'rotate(0deg)';
+            } else {
+                // Close all other expanded details
+                document.querySelectorAll('.venue-detail.expanded').forEach(el => {
+                    el.classList.remove('expanded');
+                });
+                document.querySelectorAll('[id$="-chevron"]').forEach(el => {
+                    el.style.transform = 'rotate(0deg)';
+                });
+
+                detail.classList.add('expanded');
+                if (chevron) chevron.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Check for hash in URL and expand that venue
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+            setTimeout(reveal, 100);
+
+            const hash = window.location.hash;
+            if (hash) {
+                const venueId = hash.substring(1);
+                const detailId = venueId + '-detail';
+                const detail = document.getElementById(detailId);
+                if (detail) {
+                    setTimeout(() => {
+                        toggleVenueDetail(detailId);
+                        document.getElementById(venueId)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 500);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

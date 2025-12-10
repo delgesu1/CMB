@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Artists | Chamber Music Boise</title>
+    <meta name="description" content="Meet the exceptional musicians and presenters of Chamber Music Boise - dedicated artists bringing world-class chamber music to the Treasure Valley.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* ═══════════════════════════════════════════════════════════
+           CHAMBER MUSIC BOISE - Premium Classical Experience
+           Aesthetic: Concert Hall Intimacy + Editorial Sophistication
+           ═══════════════════════════════════════════════════════════ */
+
+        :root {
+            /* ═══ MODERN RECITAL PALETTE ═══ */
+            --gold-primary: #a65d4f;
+            --gold-light: #c4786a;
+            --gold-warm: #8f4f42;
+            --champagne: #f5e6dc;
+
+            /* Secondary Accent - Forest Teal */
+            --teal: #3d6b5f;
+            --teal-light: #4d8577;
+            --teal-dark: #2d5347;
+
+            /* Highlight - Retained Gold */
+            --accent-gold: #c9a227;
+            --accent-gold-light: #dbb94a;
+
+            /* True Dark */
+            --charcoal: #1a1a1a;
+            --charcoal-warm: #222222;
+            --charcoal-soft: #2a2a2a;
+            --charcoal-light: #333333;
+
+            /* Clean Light Backgrounds */
+            --ivory: #ffffff;
+            --ivory-warm: #fafafa;
+            --cream: #f5f5f5;
+            --cream-dark: #ebebeb;
+            --sand: #d9d9d9;
+
+            /* Text colors */
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #717171;
+            --text-muted: #9a9a9a;
+
+            /* Accent colors */
+            --burgundy-soft: #7d5a50;
+            --rose-muted: #a67878;
+            --terracotta: #a65d4f;
+
+            /* Fresh accents */
+            --coral: #e07a5f;
+            --sage: #81a69b;
+
+            /* Musical timing curves */
+            --ease-crescendo: cubic-bezier(0.22, 0.61, 0.36, 1);
+            --ease-decrescendo: cubic-bezier(0.61, 0.22, 1, 0.36);
+            --ease-legato: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --ease-staccato: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--ivory);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Hide default cursor only on non-touch devices */
+        @media (pointer: fine) {
+            body, body * {
+                cursor: none !important;
+            }
+        }
+
+        /* Atmospheric Background */
+        .atmosphere {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .atmosphere::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 120% 80% at 50% -20%, rgba(166, 93, 79, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse 100% 100% at 0% 100%, rgba(61, 107, 95, 0.04) 0%, transparent 40%),
+                radial-gradient(ellipse 80% 80% at 100% 0%, rgba(166, 93, 79, 0.03) 0%, transparent 40%);
+        }
+
+        .atmosphere::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 90% 10%, rgba(61, 107, 95, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 10% 90%, rgba(166, 93, 79, 0.04) 0%, transparent 25%);
+            animation: ambientDrift 60s ease-in-out infinite;
+        }
+
+        @keyframes ambientDrift {
+            0%, 100% { transform: translate(0, 0); opacity: 1; }
+            50% { transform: translate(0.5%, -0.5%); opacity: 0.9; }
+        }
+
+        .texture-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.015;
+            mix-blend-mode: multiply;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .vignette {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9997;
+            background: radial-gradient(ellipse 90% 90% at 50% 50%, transparent 0%, rgba(245, 245, 245, 0.4) 100%);
+        }
+
+        /* Custom Cursor - ensure always on top */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 2147483647; /* Maximum z-index value */
+            pointer-events: none;
+        }
+
+        /* Hide custom cursor on touch devices */
+        @media (pointer: coarse) {
+            .cursor-dot,
+            .cursor-outline {
+                display: none !important;
+            }
+        }
+
+        .cursor-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--gold-primary);
+        }
+
+        .cursor-outline {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--gold-primary);
+            opacity: 0.4;
+            transition: all 0.3s var(--ease-legato);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Italiana', serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            line-height: 1.1;
+            color: var(--text-dark);
+        }
+
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .text-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: var(--gold-primary);
+        }
+
+        ::selection {
+            background: var(--gold-primary);
+            color: var(--ivory);
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition:
+                opacity 1.4s var(--ease-crescendo),
+                transform 1.4s var(--ease-crescendo);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* Navigation */
+        /* Navbar scrolled state */
+        #navbar {
+            transition:
+                background 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                backdrop-filter 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #navbar.nav-scrolled {
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+        }
+
+        .nav-logo {
+            transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold-primary);
+            transition: width 0.4s var(--ease-legato);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            position: relative;
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-weight: 400;
+            overflow: hidden;
+            transition: all 0.5s var(--ease-legato);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gold-primary);
+            transform: translateX(-101%);
+            transition: transform 0.5s var(--ease-crescendo);
+        }
+
+        .btn-primary:hover {
+            color: var(--ivory);
+        }
+
+        .btn-primary:hover::before {
+            transform: translateX(0);
+        }
+
+        .btn-primary span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Grid lines */
+        .grid-line {
+            position: absolute;
+            background: linear-gradient(180deg, transparent, rgba(166, 93, 79, 0.1), transparent);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Artist Section Styles */
+        .artist-section {
+            border-bottom: 1px solid var(--cream-dark);
+        }
+
+        .artist-section:last-child {
+            border-bottom: none;
+        }
+
+        .artist-photo {
+            transition: transform 0.8s var(--ease-crescendo), filter 0.6s var(--ease-legato);
+        }
+
+        .artist-photo:hover {
+            transform: scale(1.02);
+        }
+
+        .photo-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .photo-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 8px;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+            pointer-events: none;
+        }
+
+        /* Decorative line between photos */
+        .photo-divider {
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--gold-primary), transparent);
+            opacity: 0.3;
+        }
+
+        /* Dual Photo Crossfade for Mobile */
+        .dual-photo-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3/4;
+        }
+
+        .dual-photo-container .photo-layer {
+            position: absolute;
+            inset: 0;
+            transition: opacity 1.2s var(--ease-legato);
+        }
+
+        .dual-photo-container .photo-layer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .dual-photo-container .photo-layer.active {
+            opacity: 1;
+        }
+
+        .dual-photo-container .photo-layer:not(.active) {
+            opacity: 0;
+        }
+
+        /* Mobile (< 640px): Hide side-by-side, show crossfade container */
+        @media (max-width: 639px) {
+            .photos-desktop {
+                display: none;
+            }
+            .photos-mobile {
+                display: block;
+            }
+        }
+
+        /* Tablet (640px - 1023px): Show side-by-side photos */
+        @media (min-width: 640px) and (max-width: 1023px) {
+            .photos-desktop {
+                display: flex;
+                flex-direction: row;
+            }
+            .photos-mobile {
+                display: none;
+            }
+        }
+
+        /* Desktop (1024px+): Stack photos vertically */
+        @media (min-width: 1024px) {
+            .photos-desktop {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .photos-desktop .photo-container {
+                flex: none;
+                width: 100%;
+            }
+            .photos-mobile {
+                display: none;
+            }
+        }
+
+        /* Photo indicator dots */
+        .photo-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .photo-indicator {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--sand);
+            transition: all 0.4s var(--ease-legato);
+        }
+
+        .photo-indicator.active {
+            background: var(--gold-primary);
+            transform: scale(1.2);
+        }
+
+        @media (min-width: 640px) {
+            .photo-indicators {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- Atmospheric Background System -->
+    <div class="atmosphere"></div>
+    <div class="texture-overlay"></div>
+    <div class="vignette"></div>
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Elegant Grid Lines -->
+    <div class="grid-line w-px h-full left-16 top-0 hidden lg:block fixed opacity-30"></div>
+    <div class="grid-line w-px h-full right-16 top-0 hidden lg:block fixed opacity-30"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-700 py-2 px-4 md:py-3 md:px-6 lg:px-12 flex justify-between items-center" id="navbar">
+        <!-- Logo -->
+        <div class="text-lg md:text-xl tracking-[0.2em] md:tracking-[0.3em] font-cinzel font-medium uppercase">
+            <a href="index.html" class="block">
+                <img src="logo.png" alt="Chamber Music Boise" class="nav-logo h-16 md:h-20 lg:h-24 w-auto transition-all duration-500 ease-out">
+            </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex space-x-8 xl:space-x-12 text-[0.7rem] tracking-[0.15em] font-normal uppercase">
+            <a href="index.html#about" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">About</a>
+            <a href="index.html#season" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">Season</a>
+            <a href="venues.html" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">Venues</a>
+            <a href="artists.html" class="nav-link active text-[var(--text-dark)] transition-colors duration-300">Artists</a>
+            <a href="index.html#gallery" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">Media</a>
+            <a href="index.html#donate" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">Support</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden z-50 text-[var(--text-dark)] p-2" id="mobile-menu-btn" aria-label="Toggle menu">
+            <i data-lucide="menu" class="w-6 h-6 menu-icon"></i>
+            <i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
+        </button>
+
+        <!-- Desktop CTA -->
+        <a href="index.html#contact" class="hidden lg:block btn-primary">
+            <span>Inquire</span>
+        </a>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[var(--ivory)] z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-500">
+        <div class="flex flex-col space-y-8 text-center">
+            <a href="index.html#about" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">About</a>
+            <a href="index.html#season" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Season</a>
+            <a href="venues.html" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Venues</a>
+            <a href="artists.html" class="mobile-link text-2xl font-cormorant italic text-[var(--text-dark)]">Artists</a>
+            <a href="index.html#gallery" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Media</a>
+            <a href="index.html#donate" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Support</a>
+            <div class="pt-4">
+                <a href="index.html#contact" class="btn-primary"><span>Contact</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="relative w-full min-h-[60vh] flex items-center justify-center overflow-hidden bg-[var(--ivory)] pt-32 pb-16">
+        <!-- Subtle background -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_40%,rgba(166,93,79,0.05),transparent)]"></div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-1/3 left-1/4 w-px h-24 bg-gradient-to-b from-transparent via-[var(--gold-primary)]/15 to-transparent hidden lg:block"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-px h-24 bg-gradient-to-b from-transparent via-[var(--gold-primary)]/15 to-transparent hidden lg:block"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <!-- Label -->
+            <p class="reveal text-[var(--gold-primary)] text-[0.65rem] tracking-[0.5em] uppercase mb-8 font-medium flex items-center justify-center gap-4">
+                <span class="w-8 h-px bg-[var(--gold-primary)]/50"></span>
+                The Musicians
+                <span class="w-8 h-px bg-[var(--gold-primary)]/50"></span>
+            </p>
+
+            <!-- Main Title -->
+            <h1 class="reveal reveal-delay-1 mb-8">
+                <span class="block text-5xl md:text-7xl lg:text-8xl font-light tracking-wide text-[var(--text-dark)] leading-[0.95]">Our</span>
+                <span class="block font-cormorant italic text-5xl md:text-7xl lg:text-8xl text-[var(--gold-primary)] font-light mt-2">Artists</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="reveal reveal-delay-2 font-cormorant text-xl md:text-2xl italic font-light text-[var(--text-medium)] max-w-2xl mx-auto leading-relaxed mt-8">
+                Exceptional musicians and presenters dedicated to bringing world-class chamber music to the Treasure Valley.
+            </p>
+        </div>
+    </header>
+
+    <!-- Artists Section -->
+    <section class="py-16 lg:py-24 bg-[#f8f8f8]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <!-- Artist 1: Rosie Weiss - Photos Left -->
+            <article class="artist-section py-16 lg:py-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <!-- Photos -->
+                    <div class="reveal">
+                        <!-- Desktop: Side by side -->
+                        <div class="photos-desktop gap-4 lg:gap-6">
+                            <div class="photo-container flex-1 aspect-[3/4]">
+                                <img src="Artist Bios and photos/Rosie1.jpg"
+                                     alt="Rosie Weiss with violin"
+                                     class="artist-photo w-full h-full object-cover">
+                            </div>
+                            <div class="photo-container flex-1 aspect-[3/4]">
+                                <img src="Artist Bios and photos/Rosie4.jpg"
+                                     alt="Rosie Weiss portrait"
+                                     class="artist-photo w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <!-- Mobile: Crossfade -->
+                        <div class="photos-mobile">
+                            <div class="photo-container dual-photo-container" data-crossfade>
+                                <div class="photo-layer active">
+                                    <img src="Artist Bios and photos/Rosie1.jpg" alt="Rosie Weiss with violin">
+                                </div>
+                                <div class="photo-layer">
+                                    <img src="Artist Bios and photos/Rosie4.jpg" alt="Rosie Weiss portrait">
+                                </div>
+                            </div>
+                            <div class="photo-indicators">
+                                <span class="photo-indicator active"></span>
+                                <span class="photo-indicator"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bio -->
+                    <div class="reveal reveal-delay-1">
+                        <p class="text-[var(--gold-primary)] text-[0.6rem] tracking-[0.4em] uppercase mb-4 font-medium">Violinist</p>
+                        <h2 class="text-4xl lg:text-5xl xl:text-6xl mb-6 text-[var(--text-dark)]">Rosie Weiss</h2>
+
+                        <div class="font-cormorant text-lg lg:text-xl text-[var(--text-medium)] leading-relaxed space-y-4">
+                            <p>
+                                Rosie Weiss is a versatile violinist, fiddler, and studio musician. She currently serves as associate concertmaster of the Billings Symphony and performs with the Boise Philharmonic, Bozeman Symphony, and Palm Beach Symphony.
+                            </p>
+                            <p>
+                                As a founding member of Carnegie Hall's National Youth Orchestra, she served for three seasons as assistant and associate concertmaster, performing across Russia, Europe, and China. She has shared the stage with conductors including Valery Gergiev, Charles Dutoit, and Gerard Schwarz, and artists such as Joshua Bell, Emanuel Ax, and Daniil Trifonov.
+                            </p>
+                            <p>
+                                As a chamber musician, Rosie has performed at Festival Napa Valley, Zephyr International Chamber Music Festival, and National Sawdust in New York. Most recently, she joined Thirdspace Quartet for a full season in Boise. Her recording credits include a Grammy award-winning album by John Daversa.
+                            </p>
+                            <p class="italic text-[var(--text-light)]">
+                                In her free time, you can find Rosie hiking and birding in her favorite places in Idaho and Montana.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Artist 2: Nicole Oswald - Photos Right -->
+            <article class="artist-section py-16 lg:py-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <!-- Bio (Order 2 on mobile, 1 on desktop) -->
+                    <div class="reveal order-2 lg:order-1">
+                        <p class="text-[var(--gold-primary)] text-[0.6rem] tracking-[0.4em] uppercase mb-4 font-medium">Violinist</p>
+                        <h2 class="text-4xl lg:text-5xl xl:text-6xl mb-6 text-[var(--text-dark)]">Nicole Oswald</h2>
+
+                        <div class="font-cormorant text-lg lg:text-xl text-[var(--text-medium)] leading-relaxed space-y-4">
+                            <p>
+                                Nicole Oswald is the newly appointed Associate Concertmaster of the Boise Philharmonic Orchestra and currently acting as Concertmaster. She is Artist in Residence at the College of Idaho and violinist in the Langroise Trio.
+                            </p>
+                            <p>
+                                Previously, Nicole was a tenured core member of the Virginia Symphony Orchestra, and prior to that served as concertmaster of The Orchestra Now and a member of the West Virginia Symphony Orchestra. She has collaborated with artists including Gil Shaham, Andrés Cárdenes, Charlie Castleman, and members of the Bergonzi String Quartet.
+                            </p>
+                            <p>
+                                As an educator, Nicole maintains a private studio, coaches chamber music, and works with youth music organizations and public school programs. She has been invited to perform and teach at the College of William and Mary, Old Dominion University, and Christopher Newport University, and was faculty at Miami Youth for Chamber Music.
+                            </p>
+                            <p>
+                                Ms. Oswald attended the Eastman School of Music (BM), Frost School of Music (Artist Diploma), and Carnegie Mellon University (Master of Music). As a teenager, she studied abroad for three years at the Utrechts Conservatory in The Netherlands.
+                            </p>
+                            <p>
+                                Beyond the concert hall, Nicole is dedicated to music education and community engagement, believing that chamber music has the power to create meaningful connections between performers and audiences.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Photos (Order 1 on mobile, 2 on desktop) -->
+                    <div class="reveal reveal-delay-1 order-1 lg:order-2">
+                        <!-- Desktop: Side by side -->
+                        <div class="photos-desktop gap-4 lg:gap-6">
+                            <div class="photo-container flex-1 aspect-[3/4]">
+                                <img src="Artist Bios and photos/Nicole1.jpg"
+                                     alt="Nicole Oswald with violin"
+                                     class="artist-photo w-full h-full object-cover">
+                            </div>
+                            <div class="photo-container flex-1 aspect-[3/4]">
+                                <img src="Artist Bios and photos/Nicole2.jpg"
+                                     alt="Nicole Oswald portrait"
+                                     class="artist-photo w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <!-- Mobile: Crossfade -->
+                        <div class="photos-mobile">
+                            <div class="photo-container dual-photo-container" data-crossfade>
+                                <div class="photo-layer active">
+                                    <img src="Artist Bios and photos/Nicole1.jpg" alt="Nicole Oswald with violin">
+                                </div>
+                                <div class="photo-layer">
+                                    <img src="Artist Bios and photos/Nicole2.jpg" alt="Nicole Oswald portrait">
+                                </div>
+                            </div>
+                            <div class="photo-indicators">
+                                <span class="photo-indicator active"></span>
+                                <span class="photo-indicator"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Artist 3: Aubrey Holmes - Photos Left -->
+            <article class="artist-section py-16 lg:py-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <!-- Photos -->
+                    <div class="reveal">
+                        <!-- Desktop: Side by side -->
+                        <div class="photos-desktop gap-4 lg:gap-6">
+                            <div class="photo-container flex-1 aspect-[3/4]">
+                                <img src="Artist Bios and photos/Aubrey1.jpg"
+                                     alt="Aubrey Holmes with viola"
+                                     class="artist-photo w-full h-full object-cover">
+                            </div>
+                            <div class="photo-container flex-1 aspect-[3/4]">
+                                <img src="Artist Bios and photos/Aubrey6.jpg"
+                                     alt="Aubrey Holmes candid portrait"
+                                     class="artist-photo w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <!-- Mobile: Crossfade -->
+                        <div class="photos-mobile">
+                            <div class="photo-container dual-photo-container" data-crossfade>
+                                <div class="photo-layer active">
+                                    <img src="Artist Bios and photos/Aubrey1.jpg" alt="Aubrey Holmes with viola">
+                                </div>
+                                <div class="photo-layer">
+                                    <img src="Artist Bios and photos/Aubrey6.jpg" alt="Aubrey Holmes candid portrait">
+                                </div>
+                            </div>
+                            <div class="photo-indicators">
+                                <span class="photo-indicator active"></span>
+                                <span class="photo-indicator"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bio -->
+                    <div class="reveal reveal-delay-1">
+                        <p class="text-[var(--gold-primary)] text-[0.6rem] tracking-[0.4em] uppercase mb-4 font-medium">Violist</p>
+                        <h2 class="text-4xl lg:text-5xl xl:text-6xl mb-6 text-[var(--text-dark)]">Aubrey Holmes</h2>
+
+                        <div class="font-cormorant text-lg lg:text-xl text-[var(--text-medium)] leading-relaxed space-y-4">
+                            <p>
+                                Violinist and violist Aubrey Holmes is currently a member of the Boise Philharmonic's viola section. During the 2022/2023 season, he was a full-time core member of the Virginia Symphony Orchestra's violin section, rotating into Assistant Concertmaster.
+                            </p>
+                            <p>
+                                An avid chamber musician, Aubrey is a founding member and violinist of the Heimat Quartet (2014-2020), which gave their Carnegie Hall debut in 2019. The quartet joined the faculty at Shenandoah Conservatory and were quarter-finalists at both the 2017 Fischoff National Chamber Music Competition and the 2019 Joachim International Chamber Music Competition in Weimar, Germany.
+                            </p>
+                            <p>
+                                International appearances include the International Mendelssohn Festival in Hamburg, Germany, The Esmeraldas International Music Festival in Quito, Ecuador, and the Lunenberg Academy of Music in Nova Scotia. From 2011-2015, Mr. Holmes was based in Boston, serving as Concertmaster/Principal 2nd with Symphony Nova and performing with MetroWest Opera, Symphony Pro Musica, and Boston Opera Collaborative.
+                            </p>
+                            <p>
+                                Mr. Holmes' primary mentors have included Dr. Blanka Bednarz, Dr. Irina Muresanu, Cathy Meng Robinson, and Daniel Kurganov, as well as members of the Miami String Quartet, Shanghai Quartet, and the Audubon Quartet.
+                            </p>
+                            <p>
+                                Aubrey's infectious enthusiasm for music extends beyond performance to education and outreach, where he works to inspire the next generation of chamber musicians.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Divider -->
+            <div class="reveal py-8">
+                <div class="flex items-center justify-center gap-6">
+                    <span class="w-24 h-px bg-gradient-to-r from-transparent to-[var(--gold-primary)]/30"></span>
+                    <span class="text-[var(--gold-primary)] text-[0.55rem] tracking-[0.4em] uppercase">Presenters</span>
+                    <span class="w-24 h-px bg-gradient-to-l from-transparent to-[var(--gold-primary)]/30"></span>
+                </div>
+            </div>
+
+            <!-- Presenter 1: Bradley Berg -->
+            <article class="artist-section py-16 lg:py-24">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center">
+                    <!-- Photo (Single, centered) -->
+                    <div class="reveal lg:col-span-1 flex justify-center">
+                        <div class="photo-container w-full max-w-sm aspect-[3/4]">
+                            <img src="Artist Bios and photos/_BradlyBerg.webp"
+                                 alt="Bradley Berg"
+                                 class="artist-photo w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <!-- Bio -->
+                    <div class="reveal reveal-delay-1 lg:col-span-2">
+                        <p class="text-[var(--gold-primary)] text-[0.6rem] tracking-[0.4em] uppercase mb-4 font-medium">Presenter</p>
+                        <h2 class="text-4xl lg:text-5xl xl:text-6xl mb-6 text-[var(--text-dark)]">Bradley Berg</h2>
+
+                        <div class="font-cormorant text-lg lg:text-xl text-[var(--text-medium)] leading-relaxed space-y-4">
+                            <p>
+                                Bradley Berg is a pianist, historian, presenter, and performing arts advocate. He holds a degree from Indiana University and brings deep expertise in classical music history and performance to his work.
+                            </p>
+                            <p>
+                                By day, Bradley serves as Grants Manager for the Boise Philharmonic. By evening, he's a musicologist and Boise State Public Radio Music host. He joined Boise State Public Radio Music as host of the Boise Philharmonic Showcase in 2023—the perfect complement to his administrative role, where as Musicologist he meets the world-class musicians, guest artists, composers, and conductors who make their way through Boise.
+                            </p>
+                            <p>
+                                The Showcase aims to capture and comment on the artistic vibrancy of Boise within the realm of classical music. Through interviews with touring artists and curated playlists that reflect local programming, Bradley showcases Boise as Idaho's cultural hub for the performing arts. He also runs a YouTube channel dedicated to original performances of rare and previously unrecorded classical piano music.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Presenter 2: Karen Mang Kennedy -->
+            <article class="artist-section py-16 lg:py-24 border-b-0">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center">
+                    <!-- Bio (Order 2 on mobile, 1 on desktop) -->
+                    <div class="reveal order-2 lg:order-1 lg:col-span-2">
+                        <p class="text-[var(--gold-primary)] text-[0.6rem] tracking-[0.4em] uppercase mb-4 font-medium">Presenter</p>
+                        <h2 class="text-4xl lg:text-5xl xl:text-6xl mb-6 text-[var(--text-dark)]">Karen Mang Kennedy</h2>
+
+                        <div class="font-cormorant text-lg lg:text-xl text-[var(--text-medium)] leading-relaxed space-y-4">
+                            <p>
+                                Karen hails from Saskatchewan and completed her Bachelor of Music Performance (clarinet) at the University of Victoria, where she toured extensively with the UVic Chamber Singers.
+                            </p>
+                            <p>
+                                She served in the Royal Canadian Mounted Police for 13 years in North Vancouver, Headquarters, and Surrey, BC. Karen has sung with the Vancouver Chamber Choir, musica intima vocal ensemble, and as section leader with Christ Church Cathedral Choir in Vancouver.
+                            </p>
+                            <p>
+                                Before immigrating to Boise, she worked as a freelance musician in the Vancouver area. Having sung for the Heath Arts Society in BC, she is excited to bring this concept of music outreach to residential care homes in Idaho.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Photo (Order 1 on mobile, 2 on desktop) -->
+                    <div class="reveal reveal-delay-1 order-1 lg:order-2 lg:col-span-1 flex justify-center">
+                        <div class="photo-container w-full max-w-sm aspect-[3/4]">
+                            <img src="Artist Bios and photos/_KarenMangKennedy.jpg"
+                                 alt="Karen Mang Kennedy"
+                                 class="artist-photo w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 lg:py-32 px-8 relative overflow-hidden bg-white">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--sand)] to-transparent"></div>
+
+        <div class="max-w-3xl mx-auto text-center reveal">
+            <div class="flex items-center justify-center gap-6 mb-8">
+                <span class="w-12 h-px bg-gradient-to-r from-transparent to-[var(--gold-primary)]"></span>
+                <span class="text-[var(--gold-primary)] text-[0.6rem] tracking-[0.4em] uppercase font-medium">Experience Live Music</span>
+                <span class="w-12 h-px bg-gradient-to-l from-transparent to-[var(--gold-primary)]"></span>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl lg:text-5xl mb-6 text-[var(--text-dark)]">
+                Hear Our <span class="italic font-cormorant text-[var(--gold-primary)] font-light">Artists</span> Perform
+            </h2>
+
+            <p class="text-[var(--text-medium)] mb-10 text-base lg:text-lg font-light leading-relaxed max-w-xl mx-auto">
+                Join us for intimate concerts featuring these exceptional musicians at our beautiful venues across the Treasure Valley.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#season" class="btn-primary px-10 py-4 inline-block">
+                    <span>View Season Schedule</span>
+                </a>
+                <a href="venues.html" class="btn-primary px-10 py-4 inline-block" style="border-color: var(--teal); color: var(--teal);">
+                    <span>Explore Venues</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--charcoal)] py-20 px-8 lg:px-24">
+        <div class="max-w-7xl mx-auto">
+            <!-- Top section -->
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-10 mb-16">
+                <!-- Logo -->
+                <div class="text-center lg:text-left">
+                    <a href="index.html" class="text-lg tracking-[0.3em] font-cinzel text-[var(--ivory)]">
+                        Chamber <span class="text-[var(--gold-light)]">Music</span> Boise
+                    </a>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="flex flex-wrap justify-center gap-8 lg:gap-12 text-[0.65rem] tracking-[0.2em] uppercase">
+                    <a href="index.html#about" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">About</a>
+                    <a href="index.html#season" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Season</a>
+                    <a href="venues.html" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Venues</a>
+                    <a href="artists.html" class="text-[var(--ivory)] transition-colors duration-300">Artists</a>
+                    <a href="index.html#gallery" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Gallery</a>
+                    <a href="index.html#donate" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Support</a>
+                    <a href="index.html#contact" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-[var(--gold-light)]/20 to-transparent mb-12"></div>
+
+            <!-- Bottom section -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[0.6rem] tracking-[0.2em] uppercase font-light text-[var(--ivory)]/40">
+                    &copy; 2024 Chamber Music Boise. All Rights Reserved.
+                </p>
+                <p class="font-cormorant italic text-[var(--gold-light)]/60 text-base">
+                    Crafted with elegance
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Custom Cursor Logic
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        // Only enable custom cursor on non-touch devices
+        const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+
+        if (!isTouchDevice && cursorDot && cursorOutline) {
+            let mouseX = 0, mouseY = 0;
+            let outlineX = 0, outlineY = 0;
+
+            window.addEventListener("mousemove", function(e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+
+                cursorDot.style.left = `${mouseX}px`;
+                cursorDot.style.top = `${mouseY}px`;
+            });
+
+            function animateOutline() {
+                outlineX += (mouseX - outlineX) * 0.15;
+                outlineY += (mouseY - outlineY) * 0.15;
+
+                cursorOutline.style.left = `${outlineX}px`;
+                cursorOutline.style.top = `${outlineY}px`;
+
+                requestAnimationFrame(animateOutline);
+            }
+            animateOutline();
+        }
+
+        // Scroll Reveal Animation
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            const windowHeight = window.innerHeight;
+            const revealPoint = 120;
+
+            reveals.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add("active");
+                }
+            });
+        }
+
+        let ticking = false;
+        window.addEventListener("scroll", () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    reveal();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        reveal();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = btn?.querySelector('.menu-icon');
+        const closeIcon = btn?.querySelector('.close-icon');
+        const links = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        function toggleMenu(open) {
+            isMenuOpen = open;
+            menu.style.opacity = isMenuOpen ? '1' : '0';
+            menu.style.pointerEvents = isMenuOpen ? 'auto' : 'none';
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+
+            // Toggle icons
+            if (menuIcon && closeIcon) {
+                menuIcon.classList.toggle('hidden', isMenuOpen);
+                closeIcon.classList.toggle('hidden', !isMenuOpen);
+            }
+        }
+
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                toggleMenu(!isMenuOpen);
+            });
+
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    toggleMenu(false);
+                });
+            });
+        }
+
+        // Navbar Scroll Effect - Smooth Shrinking Animation
+        const navbar = document.getElementById('navbar');
+        const navLogo = document.querySelector('.nav-logo');
+
+        function updateNavbar() {
+            const scrollY = window.scrollY;
+            const scrollThreshold = 100;
+            const isMobile = window.innerWidth < 768;
+
+            // Skip shrinking animation on mobile
+            if (isMobile) {
+                return;
+            }
+
+            // Calculate progress (0 to 1) based on scroll position
+            const progress = Math.min(scrollY / scrollThreshold, 1);
+
+            // Smooth easing function for more natural feel
+            const easeProgress = progress * (2 - progress); // ease-out quad
+
+            if (scrollY > 10) {
+                // Scrolled state - 85% white background with premium blur
+                navbar.style.background = `rgba(255, 255, 255, 0.85)`;
+                navbar.style.backdropFilter = 'blur(24px) saturate(180%)';
+                navbar.style.webkitBackdropFilter = 'blur(24px) saturate(180%)';
+                navbar.style.boxShadow = `0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03)`;
+                navbar.classList.add('nav-scrolled');
+            } else {
+                // Top state
+                navbar.style.background = 'transparent';
+                navbar.style.backdropFilter = 'blur(0px)';
+                navbar.style.webkitBackdropFilter = 'blur(0px)';
+                navbar.style.boxShadow = 'none';
+                navbar.classList.remove('nav-scrolled');
+            }
+
+            // Dynamic logo scaling based on viewport
+            if (navLogo) {
+                const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+
+                let baseHeight, minHeight;
+                if (isTablet) {
+                    baseHeight = 80; // h-20
+                    minHeight = 48;
+                } else {
+                    baseHeight = 96; // h-24
+                    minHeight = 56;
+                }
+
+                const newHeight = baseHeight - (easeProgress * (baseHeight - minHeight));
+                navLogo.style.height = `${newHeight}px`;
+            }
+        }
+
+        // Throttled scroll handler for smooth performance
+        let navTicking = false;
+        window.addEventListener('scroll', () => {
+            if (!navTicking) {
+                window.requestAnimationFrame(() => {
+                    updateNavbar();
+                    navTicking = false;
+                });
+                navTicking = true;
+            }
+        });
+
+        // Initialize on load
+        updateNavbar();
+
+        // Page Load
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+            setTimeout(reveal, 100);
+        });
+
+        // Photo Crossfade for Mobile
+        function initCrossfade() {
+            const containers = document.querySelectorAll('[data-crossfade]');
+
+            containers.forEach(container => {
+                const layers = container.querySelectorAll('.photo-layer');
+                const indicators = container.parentElement.querySelectorAll('.photo-indicator');
+                let currentIndex = 0;
+
+                // Only run crossfade on mobile (when visible)
+                function isVisible() {
+                    return window.getComputedStyle(container.closest('.photos-mobile')).display !== 'none';
+                }
+
+                function crossfade() {
+                    if (!isVisible()) return;
+
+                    // Remove active from current
+                    layers[currentIndex].classList.remove('active');
+                    if (indicators[currentIndex]) {
+                        indicators[currentIndex].classList.remove('active');
+                    }
+
+                    // Move to next
+                    currentIndex = (currentIndex + 1) % layers.length;
+
+                    // Add active to new current
+                    layers[currentIndex].classList.add('active');
+                    if (indicators[currentIndex]) {
+                        indicators[currentIndex].classList.add('active');
+                    }
+                }
+
+                // Start the interval (5 seconds between transitions)
+                setInterval(crossfade, 5000);
+            });
+        }
+
+        // Initialize crossfade after page loads
+        window.addEventListener('load', () => {
+            setTimeout(initCrossfade, 500);
+        });
+    </script>
+</body>
+</html>

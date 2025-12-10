@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber Music Boise | World-Class Chamber Music in Idaho</title>
+    <meta name="description" content="Chamber Music Boise presents intimate concerts featuring extraordinary artists. Experience classical music at its most direct—right here in Boise.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* ═══════════════════════════════════════════════════════════
+           CHAMBER MUSIC BOISE - Premium Classical Experience
+           Aesthetic: Concert Hall Intimacy + Editorial Sophistication
+           ═══════════════════════════════════════════════════════════ */
+
+        :root {
+            /* ═══ MODERN RECITAL PALETTE ═══ */
+            /* Bold, fresh, high-contrast editorial design */
+
+            /* Primary Accent - Warm Terracotta */
+            --gold-primary: #a65d4f;
+            --gold-light: #c4786a;
+            --gold-warm: #8f4f42;
+            --champagne: #f5e6dc;
+
+            /* Secondary Accent - Forest Teal */
+            --teal: #3d6b5f;
+            --teal-light: #4d8577;
+            --teal-dark: #2d5347;
+
+            /* Highlight - Retained Gold (used sparingly) */
+            --accent-gold: #c9a227;
+            --accent-gold-light: #dbb94a;
+
+            /* True Dark - Bold contrast */
+            --charcoal: #1a1a1a;
+            --charcoal-warm: #222222;
+            --charcoal-soft: #2a2a2a;
+            --charcoal-light: #333333;
+
+            /* Clean Light Backgrounds */
+            --ivory: #ffffff;
+            --ivory-warm: #fafafa;
+            --cream: #f5f5f5;
+            --cream-dark: #ebebeb;
+            --sand: #d9d9d9;
+
+            /* Text colors - crisp and clear */
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #717171;
+            --text-muted: #9a9a9a;
+
+            /* Accent colors */
+            --burgundy-soft: #7d5a50;
+            --rose-muted: #a67878;
+            --terracotta: #a65d4f;
+
+            /* Fresh accents */
+            --coral: #e07a5f;
+            --sage: #81a69b;
+
+            /* Musical timing curves */
+            --ease-crescendo: cubic-bezier(0.22, 0.61, 0.36, 1);
+            --ease-decrescendo: cubic-bezier(0.61, 0.22, 1, 0.36);
+            --ease-legato: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --ease-staccato: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--ivory);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Hide default cursor only on non-touch devices */
+        @media (pointer: fine) {
+            body, body * {
+                cursor: none !important;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           ATMOSPHERIC BACKGROUND SYSTEM
+           ═══════════════════════════════════════════════════════════ */
+
+        /* Base atmosphere - clean, modern */
+        .atmosphere {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .atmosphere::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 120% 80% at 50% -20%, rgba(166, 93, 79, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse 100% 100% at 0% 100%, rgba(61, 107, 95, 0.04) 0%, transparent 40%),
+                radial-gradient(ellipse 80% 80% at 100% 0%, rgba(166, 93, 79, 0.03) 0%, transparent 40%);
+        }
+
+        /* Subtle geometric accent */
+        .atmosphere::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 90% 10%, rgba(61, 107, 95, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 10% 90%, rgba(166, 93, 79, 0.04) 0%, transparent 25%);
+            animation: ambientDrift 60s ease-in-out infinite;
+        }
+
+        @keyframes ambientDrift {
+            0%, 100% { transform: translate(0, 0); opacity: 1; }
+            50% { transform: translate(0.5%, -0.5%); opacity: 0.9; }
+        }
+
+        /* Premium texture overlay - subtle paper feel */
+        .texture-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.015;
+            mix-blend-mode: multiply;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Subtle vignette for focus */
+        .vignette {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9997;
+            background: radial-gradient(ellipse 90% 90% at 50% 50%, transparent 0%, rgba(245, 245, 245, 0.4) 100%);
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           CUSTOM CURSOR - Refined and Elegant
+           ═══════════════════════════════════════════════════════════ */
+
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 2147483647;
+            pointer-events: none;
+        }
+
+        /* Hide custom cursor on touch devices */
+        @media (pointer: coarse) {
+            .cursor-dot,
+            .cursor-outline {
+                display: none !important;
+            }
+        }
+
+        .cursor-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--gold-primary);
+        }
+
+        .cursor-outline {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--gold-primary);
+            opacity: 0.4;
+            transition: all 0.3s var(--ease-legato);
+        }
+
+        a:hover ~ .cursor-outline,
+        button:hover ~ .cursor-outline {
+            width: 50px;
+            height: 50px;
+            opacity: 0.6;
+            background: rgba(166, 93, 79, 0.1);
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           TYPOGRAPHY SYSTEM
+           ═══════════════════════════════════════════════════════════ */
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Italiana', serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            line-height: 1.1;
+            color: var(--text-dark);
+        }
+
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Refined text styles */
+        .text-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: var(--gold-primary);
+        }
+
+        .text-body {
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.9;
+            color: var(--text-medium);
+        }
+
+        /* Elegant drop cap */
+        .drop-cap::first-letter {
+            float: left;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            margin-right: 0.15em;
+            margin-top: 0.1em;
+            color: var(--gold-primary);
+            font-weight: 400;
+        }
+
+        /* Text selection */
+        ::selection {
+            background: var(--gold-primary);
+            color: var(--ivory);
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           REVEAL ANIMATIONS - Musical Timing
+           ═══════════════════════════════════════════════════════════ */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition:
+                opacity 1.4s var(--ease-crescendo),
+                transform 1.4s var(--ease-crescendo);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered delays for orchestral feel */
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* Fade in from sides */
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 1.2s var(--ease-crescendo);
+        }
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 1.2s var(--ease-crescendo);
+        }
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           DECORATIVE ELEMENTS
+           ═══════════════════════════════════════════════════════════ */
+
+        /* Elegant divider line */
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+        }
+
+        /* Subtle grid lines */
+        .grid-line {
+            position: absolute;
+            background: linear-gradient(180deg, transparent, rgba(166, 93, 79, 0.1), transparent);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Decorative corner flourish */
+        .flourish {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 1px solid rgba(166, 93, 79, 0.25);
+            pointer-events: none;
+        }
+
+        .flourish-tl {
+            top: -1px;
+            left: -1px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .flourish-br {
+            bottom: -1px;
+            right: -1px;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           NAVIGATION
+           ═══════════════════════════════════════════════════════════ */
+
+        /* Navbar scrolled state */
+        #navbar {
+            transition:
+                background 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                backdrop-filter 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #navbar.nav-scrolled {
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+        }
+
+        .nav-logo {
+            transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold-primary);
+            transition: width 0.4s var(--ease-legato);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           BUTTONS & INTERACTIVE ELEMENTS
+           ═══════════════════════════════════════════════════════════ */
+
+        .btn-primary {
+            position: relative;
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-weight: 400;
+            overflow: hidden;
+            transition: all 0.5s var(--ease-legato);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gold-primary);
+            transform: translateX(-101%);
+            transition: transform 0.5s var(--ease-crescendo);
+        }
+
+        .btn-primary:hover {
+            color: var(--ivory);
+        }
+
+        .btn-primary:hover::before {
+            transform: translateX(0);
+        }
+
+        .btn-primary span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-ghost {
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 1px solid var(--text-light);
+            color: var(--text-dark);
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            transition: all 0.4s var(--ease-legato);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--text-dark);
+            background: var(--text-dark);
+            color: var(--ivory);
+        }
+
+        /* Light section button variants */
+        .btn-primary-dark {
+            position: relative;
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--charcoal);
+            border: 1px solid var(--charcoal);
+            color: var(--ivory);
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-weight: 400;
+            overflow: hidden;
+            transition: all 0.5s var(--ease-legato);
+        }
+
+        .btn-primary-dark:hover {
+            background: var(--gold-primary);
+            border-color: var(--gold-primary);
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           IMAGE TREATMENTS
+           ═══════════════════════════════════════════════════════════ */
+
+        .img-frame {
+            position: relative;
+        }
+
+        .img-frame::before {
+            content: '';
+            position: absolute;
+            inset: -15px;
+            border: 1px solid rgba(166, 93, 79, 0.25);
+            pointer-events: none;
+            transition: all 0.6s var(--ease-legato);
+        }
+
+        .img-frame:hover::before {
+            inset: -20px;
+            border-color: rgba(166, 93, 79, 0.5);
+        }
+
+        .hover-reveal-img {
+            transition:
+                transform 0.8s var(--ease-crescendo),
+                filter 0.8s var(--ease-legato);
+        }
+
+        .group:hover .hover-reveal-img {
+            transform: scale(1.03);
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           GALLERY & SCROLLING
+           ═══════════════════════════════════════════════════════════ */
+
+        .gallery-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .gallery-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           SECTION BACKGROUNDS
+           ═══════════════════════════════════════════════════════════ */
+
+        /* Light section - default */
+        .section-light {
+            background: var(--ivory);
+        }
+
+        /* Warm cream section */
+        .section-cream {
+            background: var(--cream);
+        }
+
+        /* Dark accent section */
+        .section-dark {
+            background: var(--charcoal);
+            color: var(--ivory);
+        }
+
+        .section-dark h1, .section-dark h2, .section-dark h3 {
+            color: var(--ivory);
+        }
+
+        /* Subtle glow effect */
+        .section-glow {
+            position: relative;
+        }
+
+        .section-glow::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 40% at 50% 0%, rgba(166, 93, 79, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           FORMS
+           ═══════════════════════════════════════════════════════════ */
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px var(--ivory-warm) inset !important;
+            -webkit-text-fill-color: var(--text-dark) !important;
+        }
+
+        .form-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--sand);
+            color: var(--text-dark);
+            padding: 0.75rem 0;
+            font-size: 0.9rem;
+            transition: border-color 0.3s var(--ease-legato);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+        }
+
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           UTILITY CLASSES
+           ═══════════════════════════════════════════════════════════ */
+
+        .gold { color: var(--gold-primary); }
+        .gold-light { color: var(--gold-light); }
+        .text-dark { color: var(--text-dark); }
+        .text-medium { color: var(--text-medium); }
+        .text-light { color: var(--text-light); }
+
+        .bg-ivory { background: var(--ivory); }
+        .bg-cream { background: var(--cream); }
+        .bg-charcoal { background: var(--charcoal); }
+
+        /* Smooth scroll indicator */
+        .scroll-indicator {
+            animation: gentleBounce 2s var(--ease-legato) infinite;
+        }
+
+        @keyframes gentleBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        /* Ambient float for decorative elements */
+        .ambient-float {
+            animation: ambientFloat 8s var(--ease-legato) infinite;
+        }
+
+        @keyframes ambientFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+
+        /* Line reveal animation */
+        .line-reveal {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .line-reveal::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--gold-primary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.6s var(--ease-crescendo);
+        }
+
+        .line-reveal:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- Atmospheric Background System -->
+    <div class="atmosphere"></div>
+    <div class="texture-overlay"></div>
+    <div class="vignette"></div>
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Elegant Grid Lines -->
+    <div class="grid-line w-px h-full left-16 top-0 hidden lg:block fixed opacity-30"></div>
+    <div class="grid-line w-px h-full right-16 top-0 hidden lg:block fixed opacity-30"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-700 py-2 px-4 md:py-3 md:px-6 lg:px-12 flex justify-between items-center" id="navbar">
+        <!-- Logo -->
+        <div class="text-lg md:text-xl tracking-[0.2em] md:tracking-[0.3em] font-cinzel font-medium uppercase">
+            <a href="#" class="block">
+                <img src="logo.png" alt="Chamber Music Boise" class="nav-logo h-16 md:h-20 lg:h-24 w-auto transition-all duration-500 ease-out">
+            </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex space-x-8 xl:space-x-12 text-[0.7rem] tracking-[0.15em] font-normal uppercase">
+            <a href="#about" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">About</a>
+            <a href="#season" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">Season</a>
+            <a href="venues.html" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">Venues</a>
+            <a href="artists.html" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">Artists</a>
+            <a href="#gallery" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">Media</a>
+            <a href="#donate" class="nav-link text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors duration-300">Support</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden z-50 text-[var(--text-dark)] p-2" id="mobile-menu-btn" aria-label="Toggle menu">
+            <i data-lucide="menu" class="w-6 h-6 menu-icon"></i>
+            <i data-lucide="x" class="w-6 h-6 close-icon hidden"></i>
+        </button>
+
+        <!-- Desktop CTA -->
+        <a href="#contact" class="hidden lg:block btn-primary">
+            <span>Inquire</span>
+        </a>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[var(--ivory)] z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-500">
+        <div class="flex flex-col space-y-8 text-center">
+            <a href="#about" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">About</a>
+            <a href="#season" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Season</a>
+            <a href="venues.html" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Venues</a>
+            <a href="artists.html" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Artists</a>
+            <a href="#gallery" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Media</a>
+            <a href="#donate" class="mobile-link text-2xl font-cormorant italic text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-colors">Support</a>
+            <div class="pt-4">
+                <a href="#contact" class="btn-primary"><span>Contact</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[var(--ivory)]">
+        <!-- Warm, inviting background -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=2940&auto=format&fit=crop"
+                 alt="Concert Hall Ambiance"
+                 class="w-full h-full object-cover opacity-[0.08] scale-105">
+            <!-- Soft warm overlay -->
+            <div class="absolute inset-0 bg-gradient-to-b from-[var(--ivory)] via-transparent to-[var(--ivory)]"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[var(--ivory)]/60 via-transparent to-[var(--ivory)]/60"></div>
+            <!-- Subtle accent glow -->
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_40%,rgba(166,93,79,0.07),transparent)]"></div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-1/4 left-1/4 w-px h-32 bg-gradient-to-b from-transparent via-[var(--gold-primary)]/15 to-transparent hidden lg:block"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-px h-32 bg-gradient-to-b from-transparent via-[var(--gold-primary)]/15 to-transparent hidden lg:block"></div>
+        <div class="absolute top-1/3 right-1/3 w-32 h-px bg-gradient-to-r from-transparent via-[var(--gold-primary)]/10 to-transparent hidden lg:block"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto pt-20">
+            <!-- Elegant Label -->
+            <p class="reveal reveal-delay-1 text-[var(--gold-primary)] text-xs tracking-[0.4em] uppercase mb-10 font-medium flex items-center justify-center gap-4">
+                <span class="w-8 h-px bg-[var(--gold-primary)]/50"></span>
+                Est. 2024 · Boise, Idaho
+                <span class="w-8 h-px bg-[var(--gold-primary)]/50"></span>
+            </p>
+
+            <!-- Main Title -->
+            <h1 class="reveal reveal-delay-2 mb-8">
+                <span class="block text-6xl md:text-8xl lg:text-[10rem] font-light tracking-wide text-[var(--text-dark)] leading-[0.9]">Chamber</span>
+                <span class="block font-cormorant italic text-5xl md:text-7xl lg:text-8xl text-[var(--gold-primary)] font-light my-2 md:my-4">Music</span>
+                <span class="block text-6xl md:text-8xl lg:text-[10rem] font-light tracking-wide text-[var(--text-dark)] leading-[0.9]">Boise</span>
+            </h1>
+
+            <!-- Tagline -->
+            <p class="reveal reveal-delay-3 font-montserrat text-lg md:text-xl lg:text-2xl font-light text-[var(--text-dark)] max-w-2xl mx-auto leading-relaxed mt-10 tracking-wide">
+                World-class artists. Remarkable music. Right here at home.
+            </p>
+            <p class="reveal reveal-delay-4 font-cormorant text-base md:text-lg lg:text-xl italic font-light text-[var(--text-medium)] max-w-xl mx-auto leading-relaxed mt-4">
+                Chamber music at its most direct—intimate, virtuosic, human.
+            </p>
+
+            <!-- Scroll Indicator -->
+            <div class="reveal reveal-delay-5 mt-16 flex flex-col items-center">
+                <span class="text-[0.6rem] tracking-[0.3em] uppercase text-[var(--text-muted)] mb-4">Discover</span>
+                <a href="#about" class="scroll-indicator p-3 border border-[var(--gold-primary)]/30 rounded-full text-[var(--gold-primary)] hover:border-[var(--gold-primary)] hover:bg-[var(--gold-primary)]/10 transition-all duration-500">
+                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Intro / About Section -->
+    <section id="about" class="relative py-40 px-8 lg:px-24 overflow-hidden bg-[#f8f8f8]">
+        <!-- Fresh teal accent glow -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[var(--teal)]/[0.04] blur-[100px] rounded-full pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-[600px] h-[300px] bg-[var(--gold-primary)]/[0.03] blur-[80px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <!-- Image Column -->
+            <div class="relative reveal-left group">
+                <!-- Elegant frame -->
+                <div class="absolute -top-8 -left-8 w-full h-full border border-[var(--gold-primary)]/20 z-0 hidden md:block transition-all duration-700 group-hover:-top-10 group-hover:-left-10"></div>
+                <div class="absolute -bottom-8 -right-8 w-full h-full border border-[var(--gold-primary)]/10 z-0 hidden md:block transition-all duration-700 group-hover:-bottom-10 group-hover:-right-10"></div>
+
+                <div class="aspect-[3/4] overflow-hidden relative z-10 shadow-2xl shadow-black/10">
+                    <img src="Photos/Third Space Quartet_Live Tracking Visionkit Studio_5137_Web Size.JPG"
+                         alt="Third Space Quartet - Violin Detail"
+                         class="w-full h-full object-cover hover-reveal-img transition-all duration-1000">
+                </div>
+
+                <!-- Floating quote card -->
+                <div class="absolute -bottom-6 -right-6 lg:-bottom-10 lg:-right-10 z-20 bg-[var(--ivory)] p-8 max-w-[280px] border-l-2 border-[var(--gold-primary)] shadow-xl hidden md:block">
+                    <p class="font-cormorant text-xl lg:text-2xl italic text-[var(--text-dark)] leading-relaxed">"Small ensembles. Big artistry. Boise, listening together."</p>
+                    <div class="w-12 h-px bg-[var(--gold-primary)]/40 mt-4"></div>
+                </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class="reveal-right lg:pl-8 relative">
+                <!-- Section label -->
+                <div class="flex items-center gap-4 mb-8">
+                    <span class="w-12 h-px bg-[var(--teal)]"></span>
+                    <span class="text-[var(--teal)] text-[0.65rem] tracking-[0.4em] uppercase font-medium">Our Mission</span>
+                </div>
+
+                <h2 class="text-4xl md:text-5xl lg:text-6xl mb-12 leading-[1.1] text-[var(--text-dark)]">
+                    Artistry First,<br>
+                    <span class="italic font-cormorant text-[var(--gold-primary)] font-light">Always</span>
+                </h2>
+
+                <div class="space-y-8 text-[var(--text-medium)] font-light leading-[2] text-[0.95rem]">
+                    <p class="drop-cap">
+                        Chamber Music Boise is a new classical music series built on two non-negotiables: artistry and programming. We book artists who can do the hard thing—make you forget how hard it is.
+                    </p>
+                    <p>
+                        Our standard is simple: the music comes first. Thoughtful programming, not just "greatest hits." Intimate halls where every note matters.
+                    </p>
+                </div>
+
+                <div class="mt-14">
+                    <a href="#season" class="group inline-flex items-center gap-4 text-[0.7rem] tracking-[0.25em] uppercase text-[var(--text-medium)] hover:text-[var(--text-dark)] transition-all duration-500">
+                        <span class="pb-1 border-b border-[var(--gold-primary)]/40 group-hover:border-[var(--gold-primary)] transition-colors">Join the Inaugural Season</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-[var(--gold-primary)] group-hover:translate-x-2 transition-transform duration-500"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section Extended Modules -->
+        <div class="max-w-6xl mx-auto mt-32 lg:mt-40 px-8 lg:px-12">
+            <!-- Section intro -->
+            <div class="text-center mb-20 reveal">
+                <div class="flex items-center justify-center gap-6 mb-6">
+                    <span class="w-16 h-px bg-gradient-to-r from-transparent to-[var(--gold-primary)]/40"></span>
+                    <span class="text-[var(--gold-primary)] text-[0.6rem] tracking-[0.4em] uppercase font-medium">The Experience</span>
+                    <span class="w-16 h-px bg-gradient-to-l from-transparent to-[var(--gold-primary)]/40"></span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-px bg-[var(--sand)]/50">
+
+                <!-- Card 1: Why Chamber Music? -->
+                <div class="reveal bg-[#f8f8f8] p-10 lg:p-14 group hover:bg-white transition-colors duration-500">
+                    <span class="text-[var(--teal)] text-[0.55rem] tracking-[0.35em] uppercase font-semibold mb-8 block">The Art Form</span>
+                    <h3 class="font-cormorant italic text-3xl lg:text-4xl text-[var(--text-dark)] mb-6 leading-tight">Why Chamber<br>Music?</h3>
+                    <div class="w-10 h-px bg-[var(--teal)]/40 mb-6 group-hover:w-16 transition-all duration-500"></div>
+                    <p class="text-[var(--text-medium)] font-light leading-[1.9] text-[0.9rem]">
+                        Classical music at its most direct. A handful of players, no distance, total intensity. A conversation—intimate, virtuosic, human.
+                    </p>
+                </div>
+
+                <!-- Card 2: Who It's For -->
+                <div class="reveal reveal-delay-1 bg-[#f8f8f8] p-10 lg:p-14 group hover:bg-white transition-colors duration-500 border-t lg:border-t-0 border-[var(--sand)]">
+                    <span class="text-[var(--gold-primary)] text-[0.55rem] tracking-[0.35em] uppercase font-semibold mb-8 block">The Audience</span>
+                    <h3 class="font-cormorant italic text-3xl lg:text-4xl text-[var(--text-dark)] mb-6 leading-tight">Who It's<br>For</h3>
+                    <div class="w-10 h-px bg-[var(--gold-primary)]/40 mb-6 group-hover:w-16 transition-all duration-500"></div>
+                    <div class="space-y-4 text-[var(--text-medium)] font-light text-[0.9rem] leading-[1.9]">
+                        <p>Classical devotees seeking the real thing.</p>
+                        <p>Curious newcomers ready to listen closely.</p>
+                        <p>Anyone looking for a memorable night out.</p>
+                    </div>
+                    <p class="text-[var(--text-dark)] text-[0.85rem] mt-8 font-cormorant italic text-lg">
+                        Come for the prestige. Stay for the connection.
+                    </p>
+                </div>
+
+                <!-- Card 3: First Time? -->
+                <div class="reveal reveal-delay-2 bg-[#f8f8f8] p-10 lg:p-14 group hover:bg-white transition-colors duration-500 border-t lg:border-t-0 border-[var(--sand)]">
+                    <span class="text-[var(--teal)] text-[0.55rem] tracking-[0.35em] uppercase font-semibold mb-8 block">New Here?</span>
+                    <h3 class="font-cormorant italic text-3xl lg:text-4xl text-[var(--text-dark)] mb-6 leading-tight">First<br>Time?</h3>
+                    <div class="w-10 h-px bg-[var(--teal)]/40 mb-6 group-hover:w-16 transition-all duration-500"></div>
+                    <p class="text-[var(--text-medium)] font-light leading-[1.9] text-[0.9rem]">
+                        New to classical? Perfect. Applause is allowed. Curiosity is encouraged. Just come ready to listen.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Season Overview - Bold Modern Design -->
+    <section id="season" class="relative py-24 lg:py-32 overflow-hidden bg-white">
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <!-- Section Header - Bold & Modern -->
+            <div class="reveal flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 lg:mb-20">
+                <div>
+                    <span class="inline-block text-[0.65rem] tracking-[0.3em] uppercase text-[var(--teal)] font-semibold mb-4 bg-[var(--teal)]/10 px-4 py-2 rounded-full">2024 — 2025 Season</span>
+                    <h2 class="text-5xl md:text-6xl lg:text-7xl text-[var(--charcoal)] font-light leading-[0.95]">
+                        Upcoming<br><span class="font-cormorant italic text-[var(--gold-primary)]">Performances</span>
+                    </h2>
+                </div>
+                <a href="#" class="group inline-flex items-center gap-3 text-[0.7rem] tracking-[0.2em] uppercase text-[var(--charcoal)] hover:text-[var(--gold-primary)] transition-colors font-medium">
+                    <span>View Full Season</span>
+                    <div class="w-10 h-10 rounded-full border-2 border-current flex items-center justify-center group-hover:bg-[var(--gold-primary)] group-hover:border-[var(--gold-primary)] group-hover:text-white transition-all">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Featured Next Event - Hero Card -->
+            <div class="reveal mb-8">
+                <div class="group relative bg-[var(--charcoal)] rounded-2xl overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <!-- Image Side -->
+                        <div class="relative h-64 lg:h-auto lg:min-h-[420px] overflow-hidden">
+                            <img src="Photos/Third Space Quartet_Live Tracking Visionkit Studio_5089_Web Size.JPG"
+                                 alt="Third Space Quartet Performance"
+                                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-r from-[var(--charcoal)]/80 via-[var(--charcoal)]/40 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-[var(--charcoal)]"></div>
+                            <!-- "Up Next" Badge -->
+                            <div class="absolute top-6 left-6 bg-[var(--teal)] text-white text-[0.6rem] tracking-[0.2em] uppercase font-bold px-4 py-2 rounded-full">
+                                Up Next
+                            </div>
+                        </div>
+
+                        <!-- Content Side -->
+                        <div class="relative p-8 lg:p-12 flex flex-col justify-center">
+                            <!-- Date -->
+                            <div class="flex items-baseline gap-4 mb-6">
+                                <span class="text-7xl lg:text-8xl font-cormorant italic text-[var(--gold-light)] leading-none">14</span>
+                                <div>
+                                    <span class="block text-lg text-white/90 font-light">February</span>
+                                    <span class="block text-sm text-white/50">2025 · 7:30 PM</span>
+                                </div>
+                            </div>
+
+                            <!-- Event Title -->
+                            <h3 class="text-3xl lg:text-4xl text-white font-light mb-4 leading-tight">Romance in Minor Key</h3>
+                            <p class="text-white/60 text-base lg:text-lg font-light mb-6 leading-relaxed">A Valentine's evening of passion and longing through the Romantic masterworks of Beethoven and Schubert.</p>
+
+                            <!-- Performers -->
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-full bg-[var(--gold-primary)]/20 flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-[var(--gold-light)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <span class="block text-white font-medium">The Boise String Quartet</span>
+                                </div>
+                            </div>
+
+                            <!-- Venue Badge -->
+                            <a href="venues.html#first-presbyterian" class="inline-flex items-center gap-2 mb-8 text-white/70 hover:text-white text-sm transition-colors group">
+                                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                                <span class="border-b border-white/30 group-hover:border-white/60 transition-colors">First Presbyterian Church</span>
+                                <i data-lucide="arrow-right" class="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
+                            </a>
+
+                            <!-- CTA -->
+                            <button class="self-start bg-[var(--gold-primary)] hover:bg-[var(--gold-light)] text-[var(--charcoal)] px-8 py-4 text-[0.7rem] tracking-[0.2em] uppercase font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[var(--gold-primary)]/30">
+                                Reserve Seats
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary Featured Events - Two Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+                <!-- Card 2 -->
+                <div class="reveal reveal-delay-1 group">
+                    <div class="relative bg-white rounded-xl p-6 lg:p-8 border border-[var(--sand)] hover:border-[var(--gold-primary)]/40 hover:shadow-xl hover:shadow-[var(--gold-primary)]/5 transition-all duration-500">
+                        <!-- Date Badge -->
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-5xl font-cormorant italic text-[var(--gold-primary)] leading-none">28</span>
+                                <span class="text-sm text-[var(--charcoal)] font-medium">Feb</span>
+                            </div>
+                            <span class="text-[0.55rem] tracking-[0.15em] uppercase text-[var(--text-muted)] bg-[var(--cream)] px-3 py-1.5 rounded-full">Piano Recital</span>
+                        </div>
+
+                        <!-- Content -->
+                        <h3 class="text-xl lg:text-2xl text-[var(--charcoal)] font-medium mb-2 group-hover:text-[var(--gold-primary)] transition-colors">Winter Reflections</h3>
+                        <p class="text-[var(--text-medium)] text-sm mb-4 leading-relaxed">Bradley Berg explores the depths of Russian Romanticism</p>
+
+                        <!-- Meta -->
+                        <div class="flex items-center justify-between pt-4 border-t border-[var(--sand)]">
+                            <a href="venues.html#lyrical-libations" class="flex items-center gap-1.5 text-[var(--text-light)] text-xs hover:text-[var(--gold-primary)] transition-colors group">
+                                <i data-lucide="map-pin" class="w-3 h-3"></i>
+                                <span class="group-hover:underline">Lyrical Libations</span>
+                            </a>
+                            <button class="text-[var(--gold-primary)] text-[0.65rem] tracking-[0.15em] uppercase font-semibold hover:text-[var(--charcoal)] transition-colors flex items-center gap-2">
+                                Tickets
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="reveal reveal-delay-2 group">
+                    <div class="relative bg-white rounded-xl p-6 lg:p-8 border border-[var(--sand)] hover:border-[var(--gold-primary)]/40 hover:shadow-xl hover:shadow-[var(--gold-primary)]/5 transition-all duration-500">
+                        <!-- Date Badge -->
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-5xl font-cormorant italic text-[var(--gold-primary)] leading-none">15</span>
+                                <span class="text-sm text-[var(--charcoal)] font-medium">Mar</span>
+                            </div>
+                            <span class="text-[0.55rem] tracking-[0.15em] uppercase text-white bg-[var(--gold-primary)] px-3 py-1.5 rounded-full font-medium">Piano Trio</span>
+                        </div>
+
+                        <!-- Content -->
+                        <h3 class="text-xl lg:text-2xl text-[var(--charcoal)] font-medium mb-2 group-hover:text-[var(--gold-primary)] transition-colors">Strings & Keys</h3>
+                        <p class="text-[var(--text-medium)] text-sm mb-4 leading-relaxed">Weiss, Oswald & Berg perform Brahms and Schumann piano trios</p>
+
+                        <!-- Meta -->
+                        <div class="flex items-center justify-between pt-4 border-t border-[var(--sand)]">
+                            <a href="venues.html#tuttle-house" class="flex items-center gap-1.5 text-[var(--text-light)] text-xs hover:text-[var(--gold-primary)] transition-colors group">
+                                <i data-lucide="map-pin" class="w-3 h-3"></i>
+                                <span class="group-hover:underline">Tuttle House</span>
+                            </a>
+                            <button class="text-[var(--gold-primary)] text-[0.65rem] tracking-[0.15em] uppercase font-semibold hover:text-[var(--charcoal)] transition-colors flex items-center gap-2">
+                                Tickets
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- More Events Preview - Compact List -->
+            <div class="reveal bg-white rounded-xl border border-[var(--sand)] overflow-hidden">
+                <div class="px-6 lg:px-8 py-5 border-b border-[var(--sand)] flex items-center justify-between">
+                    <span class="text-[0.65rem] tracking-[0.25em] uppercase text-[var(--charcoal)] font-semibold">Coming Later This Season</span>
+                    <span class="text-[var(--text-muted)] text-xs">+5 more events</span>
+                </div>
+
+                <!-- Compact Event Row -->
+                <div class="divide-y divide-[var(--sand)]/60">
+                    <div class="group flex items-center gap-4 lg:gap-6 px-6 lg:px-8 py-4 hover:bg-[var(--cream)]/50 transition-colors">
+                        <div class="flex items-baseline gap-1.5 w-16 lg:w-20 flex-shrink-0">
+                            <span class="text-2xl font-cormorant italic text-[var(--gold-primary)]">29</span>
+                            <span class="text-xs text-[var(--text-medium)]">Mar</span>
+                        </div>
+                        <div class="flex-grow min-w-0">
+                            <span class="text-[var(--charcoal)] font-medium">Baroque Conversations</span>
+                            <span class="text-[var(--text-light)] text-sm ml-2 hidden sm:inline">· Bach, Vivaldi</span>
+                        </div>
+                        <a href="venues.html#davis-fund" class="hidden md:flex items-center gap-1 text-[var(--text-muted)] text-xs hover:text-[var(--gold-primary)] transition-colors flex-shrink-0">
+                            <i data-lucide="map-pin" class="w-3 h-3"></i>
+                            <span>Davis Fund</span>
+                        </a>
+                        <a href="#" class="text-[var(--text-muted)] hover:text-[var(--gold-primary)] transition-colors flex-shrink-0">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+
+                    <div class="group flex items-center gap-4 lg:gap-6 px-6 lg:px-8 py-4 hover:bg-[var(--cream)]/50 transition-colors">
+                        <div class="flex items-baseline gap-1.5 w-16 lg:w-20 flex-shrink-0">
+                            <span class="text-2xl font-cormorant italic text-[var(--gold-primary)]">12</span>
+                            <span class="text-xs text-[var(--text-medium)]">Apr</span>
+                        </div>
+                        <div class="flex-grow min-w-0">
+                            <span class="text-[var(--charcoal)] font-medium">French Impressions</span>
+                            <span class="text-[var(--text-light)] text-sm ml-2 hidden sm:inline">· Ravel, Fauré</span>
+                        </div>
+                        <a href="venues.html#bown-crossing" class="hidden md:flex items-center gap-1 text-[var(--text-muted)] text-xs hover:text-[var(--gold-primary)] transition-colors flex-shrink-0">
+                            <i data-lucide="map-pin" class="w-3 h-3"></i>
+                            <span>Bown Library</span>
+                        </a>
+                        <a href="#" class="text-[var(--text-muted)] hover:text-[var(--gold-primary)] transition-colors flex-shrink-0">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+
+                    <div class="group flex items-center gap-4 lg:gap-6 px-6 lg:px-8 py-4 hover:bg-[var(--cream)]/50 transition-colors">
+                        <div class="flex items-baseline gap-1.5 w-16 lg:w-20 flex-shrink-0">
+                            <span class="text-2xl font-cormorant italic text-[var(--gold-primary)]">10</span>
+                            <span class="text-xs text-[var(--text-medium)]">May</span>
+                        </div>
+                        <div class="flex-grow min-w-0">
+                            <span class="text-[var(--charcoal)] font-medium">Spring Awakening</span>
+                            <span class="text-[var(--text-light)] text-sm ml-2 hidden sm:inline">· Season Finale</span>
+                        </div>
+                        <a href="venues.html#first-presbyterian" class="hidden md:flex items-center gap-1 text-[var(--text-muted)] text-xs hover:text-[var(--gold-primary)] transition-colors flex-shrink-0">
+                            <i data-lucide="map-pin" class="w-3 h-3"></i>
+                            <span>First Presbyterian</span>
+                        </a>
+                        <a href="#" class="text-[var(--text-muted)] hover:text-[var(--gold-primary)] transition-colors flex-shrink-0">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Season Pass CTA - Premium Split Design -->
+            <div class="reveal mt-16">
+                <div class="grid grid-cols-1 lg:grid-cols-5 rounded-2xl overflow-hidden shadow-2xl shadow-black/10">
+                    <!-- Left Side - Image & Quote -->
+                    <div class="lg:col-span-2 relative h-64 lg:h-auto bg-[var(--charcoal)]">
+                        <img src="Photos/Third Space Quartet_Live Tracking Visionkit Studio_4984_Web Size.JPG"
+                             alt="Third Space Quartet - Live Performance"
+                             class="absolute inset-0 w-full h-full object-cover opacity-40">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[var(--charcoal)] via-[var(--charcoal)]/60 to-transparent"></div>
+                        <div class="relative h-full flex flex-col justify-end p-8 lg:p-10">
+                            <blockquote class="font-cormorant text-xl lg:text-2xl italic text-white/90 leading-relaxed mb-4">
+                                "An extraordinary season of musical excellence"
+                            </blockquote>
+                            <cite class="text-white/50 text-sm not-italic">— Idaho Statesman</cite>
+                        </div>
+                    </div>
+
+                    <!-- Right Side - CTA Content -->
+                    <div class="lg:col-span-3 bg-gradient-to-br from-[var(--gold-primary)] to-[#8f4f42] p-8 lg:p-12 flex flex-col justify-center">
+                        <span class="text-[0.6rem] tracking-[0.3em] uppercase text-white/70 font-medium mb-3">Become a Subscriber</span>
+                        <h3 class="text-3xl lg:text-4xl text-white font-light mb-4 leading-tight">Experience Every<br>Performance</h3>
+                        <p class="text-white/80 mb-8 max-w-md leading-relaxed">Join our community of music lovers. Subscribers enjoy priority seating, exclusive pre-concert receptions, complimentary programs, and 15% savings.</p>
+
+                        <!-- Benefits -->
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="text-[0.6rem] tracking-[0.15em] uppercase bg-white/20 text-white px-3 py-1.5 rounded-full">Priority Seating</span>
+                            <span class="text-[0.6rem] tracking-[0.15em] uppercase bg-white/20 text-white px-3 py-1.5 rounded-full">15% Savings</span>
+                            <span class="text-[0.6rem] tracking-[0.15em] uppercase bg-white/20 text-white px-3 py-1.5 rounded-full">VIP Receptions</span>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                            <button class="bg-white hover:bg-[var(--ivory)] text-[var(--charcoal)] px-8 py-4 text-[0.7rem] tracking-[0.2em] uppercase font-semibold rounded-full transition-all duration-300 hover:shadow-lg">
+                                Subscribe Now
+                            </button>
+                            <a href="#contact" class="text-white/80 hover:text-white text-[0.65rem] tracking-[0.2em] uppercase transition-colors flex items-center gap-2">
+                                Gift a Subscription
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- News & Updates (Editorial Style) - Light Section -->
+    <section id="news" class="py-32 lg:py-40 bg-[var(--ivory)] relative">
+        <!-- Top border -->
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--sand)] to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto px-8 lg:px-24">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 reveal">
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="w-12 h-px bg-[var(--gold-primary)]"></span>
+                        <span class="text-[var(--gold-primary)] text-[0.65rem] tracking-[0.4em] uppercase font-medium">Journal</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl text-[var(--text-dark)]">Latest <span class="italic font-cormorant text-[var(--gold-primary)] font-light">Stories</span></h2>
+                </div>
+                <a href="#" class="hidden md:flex items-center gap-3 text-[0.65rem] tracking-[0.2em] uppercase text-[var(--text-muted)] hover:text-[var(--text-dark)] transition-colors duration-300 mt-6 md:mt-0">
+                    <span>View Archive</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
+                <!-- Article 1 -->
+                <article class="reveal group cursor-pointer">
+                    <div class="overflow-hidden mb-8 aspect-[4/3] relative shadow-lg shadow-black/5">
+                        <img src="Photos/Third Space Quartet_Live Tracking Visionkit Studio_5045_Web Size.JPG"
+                             alt="Third Space Quartet Performance"
+                             class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105">
+                    </div>
+                    <div class="flex justify-between items-center mb-4 text-[0.6rem] tracking-[0.3em] uppercase">
+                        <span class="text-[var(--gold-primary)] font-medium">Interview</span>
+                        <span class="text-[var(--text-muted)]">Nov 18, 2024</span>
+                    </div>
+                    <h3 class="text-2xl lg:text-3xl font-cormorant italic mb-3 text-[var(--text-dark)] group-hover:text-[var(--gold-primary)] transition-colors duration-500">Finding Home in the Music</h3>
+                    <p class="text-[var(--text-medium)] text-sm leading-relaxed line-clamp-3 font-light">
+                        Violinist Rosie Weiss reflects on her journey from Carnegie Hall to Boise and what it means to build a chamber music community from the ground up.
+                    </p>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="reveal reveal-delay-1 group cursor-pointer">
+                    <div class="overflow-hidden mb-8 aspect-[4/3] relative shadow-lg shadow-black/5">
+                        <img src="Photos/Third Space Quartet_Live Tracking Visionkit Studio_4791_Web Size.JPG"
+                             alt="Cello Performance - Third Space Quartet"
+                             class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105">
+                    </div>
+                    <div class="flex justify-between items-center mb-4 text-[0.6rem] tracking-[0.3em] uppercase">
+                        <span class="text-[var(--gold-primary)] font-medium">Essay</span>
+                        <span class="text-[var(--text-muted)]">Oct 29, 2024</span>
+                    </div>
+                    <h3 class="text-2xl lg:text-3xl font-cormorant italic mb-3 text-[var(--text-dark)] group-hover:text-[var(--gold-primary)] transition-colors duration-500">Why Chamber Music Matters</h3>
+                    <p class="text-[var(--text-medium)] text-sm leading-relaxed line-clamp-3 font-light">
+                        In an age of endless distraction, intimate musical conversation offers something radical: the chance to truly listen.
+                    </p>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="reveal reveal-delay-2 group cursor-pointer">
+                    <div class="overflow-hidden mb-8 aspect-[4/3] relative shadow-lg shadow-black/5">
+                        <img src="Photos/Third Space Quartet_Live Tracking Visionkit Studio_4941_Web Size.JPG"
+                             alt="Third Space Quartet - Violinists"
+                             class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105">
+                    </div>
+                    <div class="flex justify-between items-center mb-4 text-[0.6rem] tracking-[0.3em] uppercase">
+                        <span class="text-[var(--gold-primary)] font-medium">Community</span>
+                        <span class="text-[var(--text-muted)]">Sep 15, 2024</span>
+                    </div>
+                    <h3 class="text-2xl lg:text-3xl font-cormorant italic mb-3 text-[var(--text-dark)] group-hover:text-[var(--gold-primary)] transition-colors duration-500">Music in the Schools</h3>
+                    <p class="text-[var(--text-medium)] text-sm leading-relaxed line-clamp-3 font-light">
+                        Our partnership with Boise School District brings live chamber performances to over 2,000 students this fall. Here's what we learned.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Performances & Artists Gallery -->
+    <section id="gallery" class="py-24 lg:py-32 bg-[#f5f5f5] relative overflow-hidden">
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <!-- Section Header -->
+            <div class="reveal flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 lg:mb-16">
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="w-12 h-px bg-[var(--gold-primary)]"></span>
+                        <span class="text-[var(--gold-primary)] text-[0.6rem] tracking-[0.4em] uppercase font-medium">Past Seasons</span>
+                    </div>
+                    <h2 class="text-5xl md:text-6xl lg:text-7xl text-[var(--charcoal)] font-light leading-[0.95]">
+                        Moments &<br><span class="font-cormorant italic text-[var(--teal)]">Memories</span>
+                    </h2>
+                </div>
+                <p class="text-[var(--text-medium)] max-w-sm text-base leading-relaxed lg:text-right">
+                    Celebrating the artists, performances, and unforgettable evenings that define our community.
+                </p>
+            </div>
+
+            <!-- Gallery Grid - Clean edges -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-1">
+
+                <!-- Large Feature - Past Performance -->
+                <div class="reveal col-span-2 row-span-2 group relative overflow-hidden">
+                    <img src="Photos/1400-6.jpg"
+                         alt="Third Space Quartet Performance"
+                         class="w-full h-full object-cover aspect-square transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-10">
+                        <span class="text-[0.55rem] tracking-[0.25em] uppercase font-semibold mb-3 block" style="color: #ffffff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Opening Night 2024</span>
+                        <h3 class="text-xl lg:text-3xl mb-2 leading-tight" style="color: #ffffff; text-shadow: 0 2px 8px rgba(0,0,0,0.6); font-family: 'Montserrat', sans-serif; font-weight: 500;">A Midsummer Night's Dream</h3>
+                        <p class="text-sm hidden lg:block font-light" style="color: rgba(255,255,255,0.9); text-shadow: 0 1px 3px rgba(0,0,0,0.5);">Mendelssohn's enchanting overture opened our inaugural season</p>
+                    </div>
+                    <div class="absolute top-6 right-6 bg-white/90 text-[var(--charcoal)] text-[0.55rem] tracking-[0.15em] uppercase px-4 py-2 hover:bg-white transition-colors cursor-pointer font-medium">
+                        <i data-lucide="play" class="w-3 h-3 inline mr-2"></i>Watch
+                    </div>
+                </div>
+
+                <!-- Artist Spotlight 1 -->
+                <div class="reveal reveal-delay-1 group relative overflow-hidden aspect-[4/5]">
+                    <img src="Photos/Third Space Quartet_Live Tracking Visionkit Studio_5089_Web Size.JPG"
+                         alt="Third Space Quartet Violinist"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
+                        <span class="text-[0.5rem] tracking-[0.2em] uppercase block mb-2 font-semibold" style="color: rgba(255,255,255,0.9); text-shadow: 0 1px 3px rgba(0,0,0,0.5);">Artist</span>
+                        <h4 class="text-base lg:text-lg" style="color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.6); font-family: 'Montserrat', sans-serif; font-weight: 500;">Rosie Weiss</h4>
+                        <p class="text-xs mt-1" style="color: rgba(255,255,255,0.8); text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Violin</p>
+                    </div>
+                </div>
+
+                <!-- Venue Shot -->
+                <div class="reveal reveal-delay-2 group relative overflow-hidden aspect-[4/5]">
+                    <img src="Photos/Third Space Quartet_Live Tracking Visionkit Studio_4911_Web Size (1).JPG"
+                         alt="Third Space Quartet Violinist"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
+                        <span class="text-[0.5rem] tracking-[0.2em] uppercase block mb-2 font-semibold" style="color: rgba(255,255,255,0.9); text-shadow: 0 1px 3px rgba(0,0,0,0.5);">Live Session</span>
+                        <h4 class="text-base lg:text-lg" style="color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.6); font-family: 'Montserrat', sans-serif; font-weight: 500;">Visionkit Studio</h4>
+                        <p class="text-xs mt-1" style="color: rgba(255,255,255,0.8); text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Recording session</p>
+                    </div>
+                </div>
+
+                <!-- Performance Highlight -->
+                <div class="reveal group relative overflow-hidden aspect-video col-span-2">
+                    <img src="Photos/Third Space Quartet_Live Tracking Visionkit Studio_4941_Web Size.JPG"
+                         alt="Third Space Quartet Duo"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5 lg:p-8">
+                        <span class="text-[0.5rem] tracking-[0.2em] uppercase block mb-2 font-semibold" style="color: rgba(255,255,255,0.9); text-shadow: 0 1px 3px rgba(0,0,0,0.5);">December 2024</span>
+                        <h4 class="text-lg lg:text-xl" style="color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.6); font-family: 'Montserrat', sans-serif; font-weight: 500;">Winter Solstice Concert</h4>
+                    </div>
+                </div>
+
+                <!-- Artist Spotlight 2 -->
+                <div class="reveal reveal-delay-1 group relative overflow-hidden aspect-[4/5]">
+                    <img src="Photos/Third Space Quartet_Live Tracking Visionkit Studio_5106_Web Size.JPG"
+                         alt="Third Space Quartet Violinist"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
+                        <span class="text-[0.5rem] tracking-[0.2em] uppercase block mb-2 font-semibold" style="color: rgba(255,255,255,0.9); text-shadow: 0 1px 3px rgba(0,0,0,0.5);">Artist</span>
+                        <h4 class="text-base lg:text-lg" style="color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.6); font-family: 'Montserrat', sans-serif; font-weight: 500;">Nicole Oswald</h4>
+                        <p class="text-xs mt-1" style="color: rgba(255,255,255,0.8); text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Violin</p>
+                    </div>
+                </div>
+
+                <!-- Behind the Scenes -->
+                <div class="reveal reveal-delay-2 group relative overflow-hidden aspect-[4/5]">
+                    <img src="Photos/Third Space Quartet_Live Tracking Visionkit Studio_4973_Web Size.JPG"
+                         alt="Third Space Quartet Rehearsal"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
+                        <span class="text-[0.5rem] tracking-[0.2em] uppercase block mb-2 font-semibold" style="color: rgba(255,255,255,0.9); text-shadow: 0 1px 3px rgba(0,0,0,0.5);">Behind the Scenes</span>
+                        <h4 class="text-base lg:text-lg" style="color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.6); font-family: 'Montserrat', sans-serif; font-weight: 500;">Studio Session</h4>
+                        <p class="text-xs mt-1" style="color: rgba(255,255,255,0.8); text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Live tracking at Visionkit</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="reveal mt-12 lg:mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 py-8 border-t border-b border-[var(--sand)]">
+                <div class="text-center">
+                    <span class="block text-4xl lg:text-5xl font-cormorant italic text-[var(--gold-primary)]">24</span>
+                    <span class="text-[var(--text-muted)] text-xs tracking-[0.15em] uppercase">Performances</span>
+                </div>
+                <div class="text-center">
+                    <span class="block text-4xl lg:text-5xl font-cormorant italic text-[var(--gold-primary)]">48</span>
+                    <span class="text-[var(--text-muted)] text-xs tracking-[0.15em] uppercase">Guest Artists</span>
+                </div>
+                <div class="text-center">
+                    <span class="block text-4xl lg:text-5xl font-cormorant italic text-[var(--gold-primary)]">3.2k</span>
+                    <span class="text-[var(--text-muted)] text-xs tracking-[0.15em] uppercase">Audience Members</span>
+                </div>
+                <div class="text-center">
+                    <span class="block text-4xl lg:text-5xl font-cormorant italic text-[var(--gold-primary)]">6</span>
+                    <span class="text-[var(--text-muted)] text-xs tracking-[0.15em] uppercase">Unique Venues</span>
+                </div>
+            </div>
+
+            <!-- View More Link -->
+            <div class="reveal mt-10 text-center">
+                <a href="#" class="group inline-flex items-center gap-3 text-[0.7rem] tracking-[0.2em] uppercase text-[var(--charcoal)] hover:text-[var(--gold-primary)] transition-colors font-medium">
+                    <span>View Full Archive</span>
+                    <span class="w-10 h-10 border border-[var(--charcoal)]/30 flex items-center justify-center group-hover:bg-[var(--gold-primary)] group-hover:border-[var(--gold-primary)] group-hover:text-white transition-all">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contribution / Donation - Elegant Light Section -->
+    <section id="donate" class="py-40 lg:py-52 px-8 relative overflow-hidden bg-[#fafafa]">
+        <!-- Dual accent glow -->
+        <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[var(--teal)]/[0.05] blur-[150px] rounded-full pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[var(--gold-primary)]/[0.04] blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center reveal">
+            <!-- Decorative frame -->
+            <div class="relative p-12 md:p-20 lg:p-24 bg-white/50 backdrop-blur-sm shadow-xl shadow-black/5">
+                <!-- Corner flourishes -->
+                <div class="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-[var(--gold-primary)]/30"></div>
+                <div class="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-[var(--gold-primary)]/30"></div>
+                <div class="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-[var(--gold-primary)]/30"></div>
+                <div class="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-[var(--gold-primary)]/30"></div>
+
+                <!-- Content -->
+                <div class="flex items-center justify-center gap-6 mb-10">
+                    <span class="w-16 h-px bg-gradient-to-r from-transparent to-[var(--gold-primary)]"></span>
+                    <span class="text-[var(--gold-primary)] text-[0.6rem] tracking-[0.5em] uppercase font-medium">Support the Arts</span>
+                    <span class="w-16 h-px bg-gradient-to-l from-transparent to-[var(--gold-primary)]"></span>
+                </div>
+
+                <h2 class="text-4xl md:text-5xl lg:text-6xl mb-8 text-[var(--text-dark)]">Become a <span class="text-[var(--gold-primary)] font-cormorant italic font-light">Patron</span></h2>
+
+                <p class="text-[var(--text-medium)] mb-14 text-base lg:text-lg font-light leading-relaxed max-w-2xl mx-auto">
+                    Great music doesn't happen by accident. Your support helps us attract extraordinary artists, maintain accessible ticket prices, and bring chamber music to schools across Boise.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <button class="btn-primary px-12 py-4">
+                        <span>Donate Now</span>
+                    </button>
+                    <button class="btn-ghost px-12 py-4">
+                        Membership
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section - Light with Form Card -->
+    <section id="contact" class="py-32 lg:py-40 px-8 lg:px-24 bg-white relative">
+        <!-- Top border -->
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--sand)] to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-28">
+            <!-- Contact Info -->
+            <div class="reveal-left">
+                <div class="flex items-center gap-4 mb-8">
+                    <span class="w-12 h-px bg-[var(--gold-primary)]"></span>
+                    <span class="text-[var(--gold-primary)] text-[0.65rem] tracking-[0.4em] uppercase font-medium">Contact</span>
+                </div>
+
+                <h2 class="text-4xl md:text-5xl lg:text-6xl mb-10 text-[var(--text-dark)]">Get in <span class="italic font-cormorant text-[var(--gold-primary)] font-light">Touch</span></h2>
+
+                <p class="text-[var(--text-medium)] mb-14 font-light max-w-md leading-relaxed">
+                    Questions about tickets, the season, or how to get involved? We'd love to hear from you.
+                </p>
+
+                <div class="space-y-10">
+                    <div>
+                        <span class="block text-[var(--gold-primary)] uppercase text-[0.6rem] tracking-[0.3em] mb-3 font-medium">Location</span>
+                        <p class="text-[var(--text-dark)] font-light text-sm tracking-wide">123 Arts Blvd, Boise, ID 83702</p>
+                    </div>
+                    <div>
+                        <span class="block text-[var(--gold-primary)] uppercase text-[0.6rem] tracking-[0.3em] mb-3 font-medium">Contact</span>
+                        <p class="text-[var(--text-dark)] font-light text-sm tracking-wide">concierge@chambermusicboise.com</p>
+                        <p class="text-[var(--text-dark)] font-light text-sm tracking-wide mt-1">+1 (208) 555-0199</p>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="mt-14 flex items-center gap-8">
+                    <a href="#" class="text-[var(--text-muted)] hover:text-[var(--gold-primary)] transition-colors duration-300">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-[var(--text-muted)] hover:text-[var(--gold-primary)] transition-colors duration-300">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-[var(--text-muted)] hover:text-[var(--gold-primary)] transition-colors duration-300">
+                        <i data-lucide="twitter" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="reveal-right">
+                <div class="bg-white p-10 lg:p-14 shadow-xl shadow-black/5 relative">
+                    <!-- Corner accents -->
+                    <div class="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-[var(--gold-primary)]/30"></div>
+                    <div class="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-[var(--gold-primary)]/30"></div>
+
+                    <form class="space-y-10">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                            <div class="relative z-0 w-full group">
+                                <input type="text" name="name" id="name" class="block py-3 px-0 w-full text-sm text-[var(--text-dark)] bg-transparent border-0 border-b border-[var(--sand)] appearance-none focus:outline-none focus:ring-0 focus:border-[var(--gold-primary)] peer transition-colors duration-300" placeholder=" " required />
+                                <label for="name" class="peer-focus:font-medium absolute text-sm text-[var(--text-muted)] duration-300 transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[var(--gold-primary)] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 tracking-wide">Name</label>
+                            </div>
+                            <div class="relative z-0 w-full group">
+                                <input type="email" name="email" id="email" class="block py-3 px-0 w-full text-sm text-[var(--text-dark)] bg-transparent border-0 border-b border-[var(--sand)] appearance-none focus:outline-none focus:ring-0 focus:border-[var(--gold-primary)] peer transition-colors duration-300" placeholder=" " required />
+                                <label for="email" class="peer-focus:font-medium absolute text-sm text-[var(--text-muted)] duration-300 transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[var(--gold-primary)] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 tracking-wide">Email</label>
+                            </div>
+                        </div>
+                        <div class="relative z-0 w-full group">
+                            <textarea name="message" id="message" rows="4" class="block py-3 px-0 w-full text-sm text-[var(--text-dark)] bg-transparent border-0 border-b border-[var(--sand)] appearance-none focus:outline-none focus:ring-0 focus:border-[var(--gold-primary)] peer resize-none transition-colors duration-300" placeholder=" " required></textarea>
+                            <label for="message" class="peer-focus:font-medium absolute text-sm text-[var(--text-muted)] duration-300 transform -translate-y-7 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[var(--gold-primary)] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 tracking-wide">Message</label>
+                        </div>
+                        <button type="button" class="btn-primary w-full sm:w-auto">
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Elegant Dark Section -->
+    <footer class="bg-[var(--charcoal)] py-20 px-8 lg:px-24">
+        <div class="max-w-7xl mx-auto">
+            <!-- Top section -->
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-10 mb-16">
+                <!-- Logo -->
+                <div class="text-center lg:text-left">
+                    <a href="#" class="text-lg tracking-[0.3em] font-cinzel text-[var(--ivory)]">
+                        Chamber <span class="text-[var(--gold-light)]">Music</span> Boise
+                    </a>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="flex flex-wrap justify-center gap-8 lg:gap-12 text-[0.65rem] tracking-[0.2em] uppercase">
+                    <a href="#about" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">About</a>
+                    <a href="#season" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Season</a>
+                    <a href="venues.html" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Venues</a>
+                    <a href="artists.html" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Artists</a>
+                    <a href="#gallery" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Gallery</a>
+                    <a href="#donate" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Support</a>
+                    <a href="#contact" class="text-[var(--ivory)]/50 hover:text-[var(--ivory)] transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-[var(--gold-light)]/20 to-transparent mb-12"></div>
+
+            <!-- Bottom section -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[0.6rem] tracking-[0.2em] uppercase font-light text-[var(--ivory)]/40">
+                    &copy; 2024 Chamber Music Boise. All Rights Reserved.
+                </p>
+                <p class="font-cormorant italic text-[var(--gold-light)]/60 text-base">
+                    Crafted with elegance
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Custom Cursor Logic - Refined and Smooth
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        // Only enable custom cursor on non-touch devices
+        const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+
+        if (!isTouchDevice && cursorDot && cursorOutline) {
+            let mouseX = 0, mouseY = 0;
+            let outlineX = 0, outlineY = 0;
+
+            window.addEventListener("mousemove", function(e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+
+                // Dot follows immediately
+                cursorDot.style.left = `${mouseX}px`;
+                cursorDot.style.top = `${mouseY}px`;
+            });
+
+            // Smooth outline follow with requestAnimationFrame
+            function animateOutline() {
+                outlineX += (mouseX - outlineX) * 0.15;
+                outlineY += (mouseY - outlineY) * 0.15;
+
+                cursorOutline.style.left = `${outlineX}px`;
+                cursorOutline.style.top = `${outlineY}px`;
+
+                requestAnimationFrame(animateOutline);
+            }
+            animateOutline();
+        }
+
+        // Enhanced Scroll Reveal Animation - Musical Timing
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+            const windowHeight = window.innerHeight;
+            const revealPoint = 120;
+
+            reveals.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add("active");
+                }
+            });
+        }
+
+        // Throttle scroll events for performance
+        let ticking = false;
+        window.addEventListener("scroll", () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    reveal();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Trigger on load
+        reveal();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = btn?.querySelector('.menu-icon');
+        const closeIcon = btn?.querySelector('.close-icon');
+        const links = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        function toggleMenu(open) {
+            isMenuOpen = open;
+            menu.style.opacity = isMenuOpen ? '1' : '0';
+            menu.style.pointerEvents = isMenuOpen ? 'auto' : 'none';
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+
+            // Toggle icons
+            if (menuIcon && closeIcon) {
+                menuIcon.classList.toggle('hidden', isMenuOpen);
+                closeIcon.classList.toggle('hidden', !isMenuOpen);
+            }
+        }
+
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                toggleMenu(!isMenuOpen);
+            });
+
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    toggleMenu(false);
+                });
+            });
+        }
+
+        // Navbar Scroll Effect - Smooth Shrinking Animation
+        const navbar = document.getElementById('navbar');
+        const navLogo = document.querySelector('.nav-logo');
+
+        function updateNavbar() {
+            const scrollY = window.scrollY;
+            const scrollThreshold = 100;
+            const isMobile = window.innerWidth < 768;
+
+            // Skip shrinking animation on mobile
+            if (isMobile) {
+                return;
+            }
+
+            // Calculate progress (0 to 1) based on scroll position
+            const progress = Math.min(scrollY / scrollThreshold, 1);
+
+            // Smooth easing function for more natural feel
+            const easeProgress = progress * (2 - progress); // ease-out quad
+
+            if (scrollY > 10) {
+                // Scrolled state - 85% white background with premium blur
+                navbar.style.background = `rgba(255, 255, 255, 0.85)`;
+                navbar.style.backdropFilter = 'blur(24px) saturate(180%)';
+                navbar.style.webkitBackdropFilter = 'blur(24px) saturate(180%)';
+                navbar.style.boxShadow = `0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03)`;
+                navbar.classList.add('nav-scrolled');
+            } else {
+                // Top state
+                navbar.style.background = 'transparent';
+                navbar.style.backdropFilter = 'blur(0px)';
+                navbar.style.webkitBackdropFilter = 'blur(0px)';
+                navbar.style.boxShadow = 'none';
+                navbar.classList.remove('nav-scrolled');
+            }
+
+            // Dynamic logo scaling based on viewport
+            if (navLogo) {
+                const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+
+                let baseHeight, minHeight;
+                if (isTablet) {
+                    baseHeight = 80; // h-20
+                    minHeight = 48;
+                } else {
+                    baseHeight = 96; // h-24
+                    minHeight = 56;
+                }
+
+                const newHeight = baseHeight - (easeProgress * (baseHeight - minHeight));
+                navLogo.style.height = `${newHeight}px`;
+            }
+        }
+
+        // Throttled scroll handler for smooth performance
+        let navTicking = false;
+        window.addEventListener('scroll', () => {
+            if (!navTicking) {
+                window.requestAnimationFrame(() => {
+                    updateNavbar();
+                    navTicking = false;
+                });
+                navTicking = true;
+            }
+        });
+
+        // Initialize on load
+        updateNavbar();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Page load animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+            setTimeout(reveal, 100);
+        });
+    </script>
+</body>
+</html>
