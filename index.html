@@ -388,28 +388,6 @@
             position: relative;
         }
 
-        /* Fade edges */
-        .experience-carousel-section::before,
-        .experience-carousel-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 80px;
-            width: 40px;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .experience-carousel-section::before {
-            left: 0;
-            background: linear-gradient(to right, #f8f8f8, transparent);
-        }
-
-        .experience-carousel-section::after {
-            right: 0;
-            background: linear-gradient(to left, #f8f8f8, transparent);
-        }
-
         .experience-carousel {
             display: flex;
             gap: 24px;
