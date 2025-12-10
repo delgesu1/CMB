@@ -888,6 +888,11 @@
         .bg-cream { background: var(--cream); }
         .bg-charcoal { background: var(--charcoal); }
 
+        /* Hero parallax background */
+        .hero-bg {
+            will-change: transform;
+        }
+
         /* Smooth scroll indicator */
         .scroll-indicator {
             animation: gentleBounce 2s var(--ease-legato) infinite;
@@ -997,10 +1002,10 @@
     <!-- Hero Section -->
     <header class="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[var(--ivory)]">
         <!-- Warm, inviting background -->
-        <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 z-0 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=2940&auto=format&fit=crop"
                  alt="Concert Hall Ambiance"
-                 class="w-full h-full object-cover opacity-[0.08] scale-105">
+                 class="hero-bg w-full h-full object-cover opacity-[0.12] scale-110">
             <!-- Soft warm overlay -->
             <div class="absolute inset-0 bg-gradient-to-b from-[var(--ivory)] via-transparent to-[var(--ivory)]"></div>
             <div class="absolute inset-0 bg-gradient-to-r from-[var(--ivory)]/60 via-transparent to-[var(--ivory)]/60"></div>
@@ -1870,6 +1875,26 @@
 
         // Trigger on load
         reveal();
+
+        // Hero parallax effect
+        const heroBg = document.querySelector('.hero-bg');
+        const heroHeader = document.querySelector('header');
+
+        if (heroBg && heroHeader) {
+            function updateParallax() {
+                const scrollY = window.scrollY;
+                const heroHeight = heroHeader.offsetHeight;
+
+                // Only apply parallax while hero is visible
+                if (scrollY < heroHeight) {
+                    const parallaxAmount = scrollY * 0.5;
+                    heroBg.style.transform = `translateY(${parallaxAmount}px)`;
+                }
+            }
+
+            window.addEventListener('scroll', updateParallax, { passive: true });
+            updateParallax();
+        }
 
         // Experience Carousel
         const expCarousel = document.querySelector('.experience-carousel');
