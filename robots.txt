@@ -1,0 +1,15 @@
+# robots.txt for Chamber Music Boise
+# https://cmb-fawn.vercel.app/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://cmb-fawn.vercel.app/sitemap.xml
+
+# Crawl-delay (optional, respectful crawling)
+Crawl-delay: 1
+
+# Block access to development/utility folders
+Disallow: /dont-use/
+Disallow: /.git/
